@@ -6,7 +6,8 @@ import Header from "../src/Header";
 import Hook from "../src/Hook";
 import FAQ from "../src/FAQ";
 
-import MintButton from "../src/MintButton";
+import MultiButton from "../src/MultiButton";
+import useCandyMachine from "../hooks/useCandyMachine";
 
 const MockupsGif = styled((props) => {
   return <img {...props} />;
@@ -21,14 +22,14 @@ const MockupsGif = styled((props) => {
 `;
 
 const QuantityAvailable = styled((props) => {
+  const { nftsData } = useCandyMachine();
+
   return (
     <Typography {...props} className="quantity">
-      1111/1111
+      {nftsData.itemsRemaining}/{nftsData.itemsAvailable}
     </Typography>
   );
-})`
-
-`;
+})``;
 
 const MintBox = styled((props) => {
   return (
@@ -36,7 +37,7 @@ const MintBox = styled((props) => {
       <MockupsGif src="one-of-one-mockups.gif" />
       <MockupsGif src="random-mockups.gif" />
       <QuantityAvailable />
-      <MintButton />
+      <MultiButton />
     </Container>
   );
 })`
@@ -51,16 +52,10 @@ const MintBox = styled((props) => {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-row-gap: 1.2rem;
+  grid-column-gap: 1.5rem;
 
   img {
-    width: 80%;
-    margin: auto;
-  }
-
-  button {
-    grid-row: 4/4;
-    grid-column: span 2;
-    width: 20%;
+    width: 100%;
     margin: auto;
   }
 
@@ -69,26 +64,52 @@ const MintBox = styled((props) => {
     grid-column: span 2;
     width: fit-content;
     margin: auto;
-    -webkit-text-stroke: 2px ${({ theme }) => theme.palette.strokeSecondary.main};
-    font-size: 1.8rem;
+    -webkit-text-stroke: 2px
+      ${({ theme }) => theme.palette.strokeSecondary.main};
+    font-size: 2.5rem;
     font-weight: 900;
+  }
+
+  @media screen and (max-width: 750px) {
+    padding: 1.5rem;
+    .quantity {
+      font-size: 1.8rem;
+    }
   }
 `;
 
 export default styled((props) => {
   return (
-    <Container
-      maxWidth="false"
-      disableGutters
-      sx={{ w: "100%", mb: 10 }}
-      {...props}
-    >
-      <Header />
-      <Hook sx={{ mb: 10 }} />
-      <MintBox sx={{ mb: 10 }} />
-      <FAQ sx={{ m: "auto" }} />
-    </Container>
+    <Box {...props}>
+      <img src="/forest.gif" className="bg-img" />
+      <Container maxWidth="false" disableGutters className="body">
+        <Header />
+        <Hook sx={{ mb: 10 }} />
+        <Container maxWidth="md">
+          <MintBox sx={{ mb: 10 }} />
+          <FAQ sx={{ m: "auto", mb: 10 }} />
+        </Container>
+      </Container>
+    </Box>
   );
-})``;
+})`
+  position: relative;
+
+  .bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .body {
+    position: relative;
+    overflow: hidden;
+  }
+`;
 
 //deploy

@@ -28,19 +28,11 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: [
-      "Arcade Classic",
-      "-apple-system",
-      "BlinkMacSystemFont",
-      "Segoe UI",
-      "Roboto",
-      "Helvetica Neue",
-      "Arial",
-      "sans-serif",
-      "Apple Color Emoji",
-      "Segoe UI Emoji",
-      "Segoe UI Symbol",
-    ].join(","),
+      "04b30regular",
+      "roboto"
+    ].join()
   },
+
 });
 
 declare module '@mui/material/styles' {
