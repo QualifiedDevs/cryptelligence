@@ -35,7 +35,7 @@ export default styled((props) => {
   );
 })`
   position: absolute;
-  width: 100%;
+  width: 95vw;
   height: 5rem;
   display: flex;
 `;

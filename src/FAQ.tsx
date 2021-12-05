@@ -49,6 +49,18 @@ export default styled((props) => {
   );
 })`
   border: 4px solid white;
-  width: fit-content;
+  width: 100%;
   padding: 2rem;
+
+  @media screen and (max-width: 750px) {
+    h3 {
+      font-size: 2rem;
+    }
+    h4 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
 `;

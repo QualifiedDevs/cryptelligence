@@ -1,34 +1,25 @@
 import { styled } from "@mui/material/styles";
-import { Typography } from "@mui/material";
-import { LoadingButton } from "@mui/lab";
+import { Button, Typography } from "@mui/material";
+import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 
 import { useWallet } from "@solana/wallet-adapter-react";
 import useCandyMachine from "../hooks/useCandyMachine";
 
-/*
- * Connect Wallet
- * Connect Wallet Hover + Anim
- * Mint Enabled
- * Mint Enabled Hover + Anim
- * Mint Disabled
- * Mint Loading
- * Countdown
- */
+const WalletModalButton = styled((props) => {
+  const { setVisible } = useWalletModal();
 
-const MultiButton = styled((props) => {
   const { connected } = useWallet();
   const { isSoldOut, mintStartDate, isMinting, startMint } = useCandyMachine();
 
   return (
-    <LoadingButton
+    <Button
       variant="contained"
-      onClick={startMint}
-      disabled={!connected || isMinting || isSoldOut}
-      loading={isMinting}
+      onClick={() => setVisible(true)}
+      disabled={connected}
       {...props}
     >
-      {!isSoldOut ? props.children : "Sold Out"}
-    </LoadingButton>
+      {props.children}
+    </Button>
   );
 })`
   color: white;
@@ -39,13 +30,16 @@ const MultiButton = styled((props) => {
   display: grid;
   place-items: center;
 
-  :disabled {
-    -webkit-text-stroke-width: 0;
-  }
+  ${({ disabled }) => {
+    if (!disabled) return;
+    return `
+
+  `;
+  }}
 
   @media screen and (max-width: 750px) {
     font-size: 2rem;
   }
 `;
 
-export default MultiButton;
+export default WalletModalButton;
