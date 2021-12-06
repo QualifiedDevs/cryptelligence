@@ -82,14 +82,14 @@ export default styled((props) => {
   return (
     <Box {...props}>
       <img src="/forest.gif" className="bg-img" />
-      <Container maxWidth="false" disableGutters className="body">
+      <Box className="body">
         <Header />
         <Hook sx={{ mb: 10 }} />
         <Container maxWidth="md">
           <MintBox sx={{ mb: 10 }} />
           <FAQ sx={{ m: "auto", mb: 10 }} />
         </Container>
-      </Container>
+      </Box>
     </Box>
   );
 })`
