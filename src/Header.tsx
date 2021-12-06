@@ -35,7 +35,13 @@ export default styled((props) => {
   );
 })`
   position: absolute;
-  width: 95vw;
+  width: 100%;
   height: 5rem;
   display: flex;
+
+  @media screen and (max-width: 600px) {
+    .social-icon img {
+      width: 1.8rem;
+    }
+  }
 `;

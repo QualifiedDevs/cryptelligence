@@ -27,7 +27,7 @@ const MultiButton = styled((props) => {
   return (
     <Box {...props}>
       {!connected ? (
-        <WalletModalButton>Select Wallet</WalletModalButton>
+        <WalletModalButton>Connect<br/>Wallet</WalletModalButton>
       ) : !isSoldOut ? (
         <MintButton>Mint</MintButton>
       ) : (
@@ -40,10 +40,10 @@ const MultiButton = styled((props) => {
   grid-column: span 2;
   margin: auto;
   h4 {
+    color: white;
     font-size: 3em;
     font-weight: bold;
     -webkit-text-stroke: 1px black;
-    text-shadow: 1px 1px 2px black;
   }
 `;
 

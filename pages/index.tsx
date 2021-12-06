@@ -42,7 +42,7 @@ const MintBox = styled((props) => {
   );
 })`
   border: 8px solid white;
-  border-radius: 8px;
+  border-radius: 25px;
   padding: 3rem;
   background-image: url(honey.png);
   background-size: cover;
@@ -55,8 +55,9 @@ const MintBox = styled((props) => {
   grid-column-gap: 1.5rem;
 
   img {
-    width: 100%;
+    width: max(70%, 150px);
     margin: auto;
+    border-radius: 25px;
   }
 
   .quantity {
@@ -82,8 +83,8 @@ export default styled((props) => {
   return (
     <Box {...props}>
       <img src="/forest.gif" className="bg-img" />
+      <Header />
       <Box className="body">
-        <Header />
         <Hook sx={{ mb: 10 }} />
         <Container maxWidth="md">
           <MintBox sx={{ mb: 10 }} />
@@ -111,5 +112,3 @@ export default styled((props) => {
     overflow: hidden;
   }
 `;
-
-//deploy

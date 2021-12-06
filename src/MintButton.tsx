@@ -33,7 +33,7 @@ const MultiButton = styled((props) => {
 })`
   color: white;
   -webkit-text-stroke: 2px ${({ theme }) => theme.palette.strokeSecondary.main};
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 900;
 
   display: grid;

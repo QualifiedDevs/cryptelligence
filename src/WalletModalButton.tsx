@@ -24,21 +24,17 @@ const WalletModalButton = styled((props) => {
 })`
   color: white;
   -webkit-text-stroke: 2px ${({ theme }) => theme.palette.strokeSecondary.main};
-  font-size: 2.5rem;
+  font-size: 1.6rem;
   font-weight: 900;
 
   display: grid;
   place-items: center;
 
-  ${({ disabled }) => {
-    if (!disabled) return;
-    return `
-
-  `;
-  }}
+  border: 6px solid black;
+  border-radius: 20px;
 
   @media screen and (max-width: 750px) {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 `;
 
