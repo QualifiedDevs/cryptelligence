@@ -48,6 +48,11 @@ height: 5rem;
 @media screen and (max-width: 750px) {
   font-size: 1.4rem;
 }
+
+:disabled {
+  -webkit-text-stroke-width: 0px;
+  background: #b9ffff;
+}
 `;
 
 export default MultiButton;

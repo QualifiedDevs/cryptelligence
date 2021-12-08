@@ -37,7 +37,7 @@ const LearnMore = styled((props) => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  -webkit-text-stroke: 1px ${({ theme }) => theme.palette.strokePrimary.main};
+  -webkit-text-stroke: 1.8px ${({ theme }) => theme.palette.strokePrimary.main};
 `;
 
 export default styled((props) => {
@@ -65,7 +65,7 @@ export default styled((props) => {
   flex-direction: column;
   align-items: center;
 
-  -webkit-text-stroke: 1px ${({ theme }) => theme.palette.strokePrimary.main};
+  -webkit-text-stroke: 2px ${({ theme }) => theme.palette.strokePrimary.main};
 
   @media screen and (max-width: 750px) {
     h6 {

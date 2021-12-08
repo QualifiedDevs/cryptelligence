@@ -60,7 +60,7 @@ export default styled((props) => {
   }
   p {
     font-size: 1.1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
   @media screen and (max-width: 750px) {

@@ -65,7 +65,7 @@ const MintBox = styled((props) => {
     grid-column: span 2;
     width: fit-content;
     margin: auto;
-    -webkit-text-stroke: 2px
+    -webkit-text-stroke: 3px
       ${({ theme }) => theme.palette.strokeSecondary.main};
     font-size: 2.5rem;
     font-weight: 400;
