@@ -68,13 +68,19 @@ const MintBox = styled((props) => {
     -webkit-text-stroke: 2px
       ${({ theme }) => theme.palette.strokeSecondary.main};
     font-size: 2.5rem;
-    font-weight: 900;
+    font-weight: 400;
   }
 
   @media screen and (max-width: 750px) {
     padding: 1.5rem;
     .quantity {
       font-size: 1.8rem;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    img {
+      width: min(150px, 100%)
     }
   }
 `;

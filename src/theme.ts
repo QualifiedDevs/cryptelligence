@@ -27,10 +27,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: [
-      "04b30regular",
-      "roboto"
-    ].join()
+    fontFamily: "daydreamthin"
   },
 
 });
@@ -40,7 +37,6 @@ declare module '@mui/material/styles' {
     strokePrimary: Palette['primary'];
     strokeSecondary?: Palette['secondary'];
   }
-
   interface PaletteOptions {
     strokePrimary?: PaletteOptions['primary'];
     strokeSecondary?: PaletteOptions['secondary'];

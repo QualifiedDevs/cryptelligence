@@ -3,5 +3,5 @@ import { styled } from "@mui/material/styles";
 export default styled((props) => {
   return <img src="logo.png" {...props}/>
 })`
-    width: 100%;
+    width: min(100%, 800px);
 `;

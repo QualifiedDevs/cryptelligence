@@ -22,8 +22,15 @@ const SocialsMenu = styled((props) => {
   );
 })`
   margin: auto 1rem auto auto;
-  .social-icon {
-    margin: 0 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1rem;
+
+  @media screen and (max-width: 600px) {
+    .social-icon img {
+      width: 1.8rem;
+    }
+    grid-column-gap: .5rem;
   }
 `;
 
@@ -38,10 +45,6 @@ export default styled((props) => {
   width: 100%;
   height: 5rem;
   display: flex;
-
-  @media screen and (max-width: 600px) {
-    .social-icon img {
-      width: 1.8rem;
-    }
-  }
+  padding: 0;
+  z-index: 1;
 `;

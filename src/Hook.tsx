@@ -1,4 +1,4 @@
-import { ButtonBase, Container, Typography } from "@mui/material";
+import { ButtonBase, Container, Typography, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 import Logo from "./Logo";
@@ -12,11 +12,11 @@ const LearnMoreButton = styled((props) => {
 })`
   border: 3px solid ${({ theme }) => theme.palette.strokePrimary.main};
   border-radius: 4px;
-  padding: 0.1rem 0.8rem;
-  font-size: 1.4rem;
+  padding: 0.4rem 1.2rem;
+  font-size: 1.2rem;
   font-weight: 900rem;
   @media screen and (max-width: 750px) {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 `;
 
@@ -28,10 +28,10 @@ const LearnMoreIcon = styled((props) => {
 
 const LearnMore = styled((props) => {
   return (
-    <div {...props}>
+    <Box {...props}>
       <LearnMoreButton sx={{ mb: 1 }} />
       <LearnMoreIcon />
-    </div>
+    </Box>
   );
 })`
   display: flex;
@@ -42,7 +42,7 @@ const LearnMore = styled((props) => {
 
 export default styled((props) => {
   return (
-    <Container maxWidth="md" sx={{ pt: "22vh" }} {...props} id="hook">
+    <Container maxWidth="lg" sx={{ pt: "22vh" }} {...props} id="hook">
       <Logo sx={{ mb: 3 }} />
       <Typography variant="h6" sx={{ mb: 5 }}>
         1111 Teddy Bears Club Collection From Solana Forest With Love
@@ -56,7 +56,7 @@ export default styled((props) => {
   height: 100vh;
 
   h6 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 800;
     text-align: center;
   }
@@ -69,7 +69,7 @@ export default styled((props) => {
 
   @media screen and (max-width: 750px) {
     h6 {
-      font-size: 1.6rem;
+      font-size: 1.2rem;
     }
   }
 `;

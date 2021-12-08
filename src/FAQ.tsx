@@ -5,15 +5,13 @@ import Link from "./Link";
 
 const Item = styled((props) => {
   return (
-    <div {...props}>
+    <Box {...props} className={`${props.className} item`}>
       <Typography variant="h4">{props.question}</Typography>
       <Typography variant="body1">{props.desc}</Typography>
-    </div>
+    </Box>
   );
 })`
-  margin: 0.5rem 0;
   p {
-    font-size: 1.2rem;
     padding-left: 1rem;
     ::before {
       content: "-";
@@ -40,8 +38,8 @@ export default styled((props) => {
         question="What is the official twitter/discord?"
         desc={
           <>
-            Visit: <Link href="https://discord.gg/g7gt5BnR5A">Discord</Link> /{" "}
-            <Link href="https://twitter.com/QualifiedDevs">Twitter</Link>
+            Visit: <Link href="https://discord.gg/g7gt5BnR5A" underline="none" >Discord</Link> /{" "}
+            <Link href="https://twitter.com/QualifiedDevs" underline="none" >Twitter</Link>
           </>
         }
       />
@@ -50,17 +48,44 @@ export default styled((props) => {
 })`
   border: 4px solid white;
   width: 100%;
-  padding: 2rem;
+  padding: 3rem;
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+    margin-bottom: .2rem;
+  }
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
 
   @media screen and (max-width: 750px) {
     h3 {
-      font-size: 2rem;
+      font-size: 1.6rem;
     }
     h4 {
-      font-size: 1.5rem;
-    }
-    p {
       font-size: 1.2rem;
     }
+    p {
+      font-size: .8rem;
+    }
+    padding: 1.5rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    h3 {
+      font-size: 1.2rem;
+    }
+    h4 {
+      font-size: 1rem;
+    }
+    p {
+      font-size: .6rem;
+    }
+    padding: 1rem;
   }
 `;

@@ -31,21 +31,23 @@ const MultiButton = styled((props) => {
     </LoadingButton>
   );
 })`
-  color: white;
-  -webkit-text-stroke: 2px ${({ theme }) => theme.palette.strokeSecondary.main};
-  font-size: 2rem;
-  font-weight: 900;
+color: black;
+-webkit-text-stroke: 2.2px white;
+font-size: 1.6rem;
+font-weight: 900;
 
-  display: grid;
-  place-items: center;
+display: grid;
+place-items: center;
 
-  :disabled {
-    -webkit-text-stroke-width: 0;
-  }
+border: 6px solid black;
+border-radius: 20px;
 
-  @media screen and (max-width: 750px) {
-    font-size: 2rem;
-  }
+width: 13rem;
+height: 5rem;
+
+@media screen and (max-width: 750px) {
+  font-size: 1.4rem;
+}
 `;
 
 export default MultiButton;
