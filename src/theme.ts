@@ -16,6 +16,10 @@ const theme = createTheme({
     text: {
       primary: "#ffffff",
     },
+    learnButton: {
+      main: "#F59C06",
+      contrastText: "#ffffff"
+    },
     strokePrimary: {
       main: "#F59C06",
     },
@@ -40,6 +44,7 @@ declare module '@mui/material/styles' {
   interface PaletteOptions {
     strokePrimary?: PaletteOptions['primary'];
     strokeSecondary?: PaletteOptions['secondary'];
+    learnButton?: PaletteOptions['primary'];
   }
 }
 
