@@ -16,7 +16,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
          <link href="fonts/daydream/stylesheet.css" rel="stylesheet" />
-                
+         <link href="fonts/gumball/stylesheet.css" rel="stylesheet" />
         </Head>
         <body>
           <Main />
