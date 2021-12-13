@@ -9,6 +9,8 @@ import FAQ from "../src/FAQ";
 import MultiButton from "../src/MultiButton";
 import useCandyMachine from "../hooks/useCandyMachine";
 
+import Countdown from "../src/Countdown";
+
 const MockupsGif = styled((props) => {
   return <img {...props} />;
 })`
@@ -37,7 +39,9 @@ const MintBox = styled((props) => {
       <MockupsGif src="one-of-one-mockups.gif" />
       <MockupsGif src="random-mockups.gif" />
       <QuantityAvailable />
-      <MultiButton />
+      <Countdown>
+        <MultiButton />
+      </Countdown>
     </Container>
   );
 })`

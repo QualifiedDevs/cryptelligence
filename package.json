@@ -23,6 +23,7 @@
     "next": "latest",
     "next-transpile-modules": "latest",
     "react": "^17.0.2",
+    "react-countdown": "^2.3.2",
     "react-dom": "latest",
     "react-hot-toast": "^2.1.1",
     "react-is": "latest",
