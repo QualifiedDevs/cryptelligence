@@ -8,7 +8,7 @@ import SocialsMenu from "./SocialsMenu";
 const BannerLogo = styled((props) => {
   return (
     <Box {...props}>
-      <Logo className="logo"/>
+      <Logo className="logo" />
       <Typography variant="h5">
         <b>Cryptelligence</b>
         <br />
@@ -17,6 +17,7 @@ const BannerLogo = styled((props) => {
     </Box>
   );
 })`
+  color: white;
   display: flex;
   .logo {
     margin-right: 1em;
