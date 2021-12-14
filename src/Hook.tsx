@@ -13,7 +13,7 @@ const Background = styled((props) => {
     </Box>
   );
 })`
-  position: absolute;
+  position: fixed;
   z-index: -1;
   width: 100%;
   height: 100vh;
@@ -27,7 +27,7 @@ const Hook = styled((props) => {
       <Box {...props}>
         <Header />
         <Box className="contents">
-          <Typography variant="h1">
+          <Typography variant="h1" sx={{mt: 5}}>
             <b>Cryptelligence</b>
             <br />
             Society

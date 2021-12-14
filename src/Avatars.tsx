@@ -1,12 +1,12 @@
 import { styled } from "@mui/material/styles";
-import { Box, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 
 import Image from "next/image";
 
 const Avatar = styled((props) => {
   return (
     <Box {...props}>
-      <Box className="image-wrapper">
+      <Box sx={{mb: 2}} className="image-wrapper">
         <Image src={props.src} layout="fill" objectFit="contain" />
       </Box>
       <Typography variant="h5">{props.name}</Typography>
@@ -17,6 +17,10 @@ const Avatar = styled((props) => {
     position: relative;
     width: 250px;
     height: 250px;
+  }
+
+  h5 {
+      color: ${({theme}) => theme.palette.text.secondary};
   }
 `;
 
@@ -38,15 +42,23 @@ const Carousel = styled((props) => {
 const Avatars = styled((props) => {
   return (
     <Box {...props}>
-      <Typography variant="h2">Avatars</Typography>
-      <Typography variant="h4">
-        Unique Combinations | 7 Classes | 300+ Traits
-      </Typography>
-      <Carousel />
+      <Container className="container">
+        <Typography variant="h2">Avatars</Typography>
+        <Typography variant="h4" sx={{ mb: 6 }}>
+          Unique Combinations | 7 Classes | 300+ Traits
+        </Typography>
+      </Container>
+      <Container maxWidth="xl">
+        <Carousel />
+      </Container>
     </Box>
   );
 })`
+  padding: 2rem 0 5rem;
   background: #0d0b1c;
+
+  .container {
+  }
 `;
 
 export default Avatars;

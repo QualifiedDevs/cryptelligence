@@ -16,9 +16,6 @@ const MenuItem = styled((props) => {
     </Box>
   );
 })`
-  .active {
-    font-weight: bold;
-  }
   a {
     transition: color 0.15s;
     :hover {
@@ -38,6 +35,9 @@ const MainMenu = styled((props) => {
     </Box>
   );
 })`
+  font-family: presicav;
+  font-size: 1.4rem;
+
   ul {
     list-style-type: none;
     height: 100%;

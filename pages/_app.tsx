@@ -14,7 +14,7 @@ export default function MyApp(props: AppProps) {
     <React.Fragment>
       <Head>
         <title>Cryptelligence Society</title>
-        <link href="/favicon.ico" rel="icon" />
+        <link href="/logo.svg" rel="icon" />
         <meta
           content="minimum-scale=1, initial-scale=1, width=device-width"
           name="viewport"

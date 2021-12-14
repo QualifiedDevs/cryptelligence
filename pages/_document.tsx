@@ -20,7 +20,6 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="stylesheet" href="https://use.typekit.net/jcz5hcx.css" />
-          <link rel="stylesheet" href="https://use.typekit.net/jcz5hcx.css" />
         </Head>
         <body>
           <Main />
