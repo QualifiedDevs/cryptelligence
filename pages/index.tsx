@@ -1,8 +1,22 @@
 import { styled } from "@mui/material/styles";
 import { Box } from "@mui/material";
 
+import Hook from "../src/Hook";
+import About from "../src/About";
+import Avatars from "../src/Avatars";
+import Roadmap from "../src/Roadmap";
+
 const index = styled((props) => {
-  return <Box {...props}>Hello World!</Box>;
-})``;
+  return (
+    <Box {...props}>
+      <Hook />
+      <About id="about" />
+      <Avatars id="avatars"/>
+      <Roadmap id="roadmap" />
+    </Box>
+  );
+})`
+  postiion: relative;
+`;
 
 export default index;

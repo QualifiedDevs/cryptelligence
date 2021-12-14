@@ -31,11 +31,9 @@ const MainMenu = styled((props) => {
   return (
     <Box component="nav" {...props}>
       <ul>
-        <MenuItem href="/">Home</MenuItem>
-        <MenuItem href="/lore/1">Lore</MenuItem>
-        <MenuItem href="/rarity">Rarity</MenuItem>
-        <MenuItem href="/whitepaper">Whitepaper</MenuItem>
-        <MenuItem href="/faq">FAQ</MenuItem>
+        <MenuItem href="/#about">About</MenuItem>
+        <MenuItem href="/#avatars">Avatars</MenuItem>
+        <MenuItem href="/#roadmap">Roadmap</MenuItem>
       </ul>
     </Box>
   );
@@ -44,7 +42,7 @@ const MainMenu = styled((props) => {
     list-style-type: none;
     height: 100%;
     display: flex;
-    align-items: center;
+    align-items: space-around;
     margin: 0;
     padding: 0;
     li {

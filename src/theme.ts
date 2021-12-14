@@ -5,7 +5,7 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#B9FFFF",
+      main: "#FFFFFF6",
     },
     secondary: {
       main: "#19857b",
@@ -17,11 +17,11 @@ const theme = createTheme({
       primary: "#ffffff",
     },
     background: {
-      default: "#192F30",
+      default: "rgb(6, 3, 9)",
     },
   },
   typography: {
-    fontFamily: "Montserrat presicav relaxia"
+    fontFamily: "Montserrat, presicav, relaxia"
   },
 
 });
