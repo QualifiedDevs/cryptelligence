@@ -16,35 +16,22 @@ const theme = createTheme({
     text: {
       primary: "#ffffff",
     },
-    learnButton: {
-      main: "#F59C06",
-      contrastText: "#ffffff"
-    },
-    strokePrimary: {
-      main: "#F59C06",
-    },
-    strokeSecondary: {
-      main: "#000000",
-    },
     background: {
       default: "#192F30",
     },
   },
   typography: {
-    fontFamily: "gumballregular"
+    fontFamily: "Montserrat presicav relaxia"
   },
 
 });
 
 declare module '@mui/material/styles' {
   interface Palette {
-    strokePrimary: Palette['primary'];
-    strokeSecondary?: Palette['secondary'];
+
   }
   interface PaletteOptions {
-    strokePrimary?: PaletteOptions['primary'];
-    strokeSecondary?: PaletteOptions['secondary'];
-    learnButton?: PaletteOptions['primary'];
+
   }
 }
 

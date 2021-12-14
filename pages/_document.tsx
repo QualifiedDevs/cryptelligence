@@ -15,8 +15,12 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
             rel="stylesheet"
           />
-         <link href="fonts/daydream/stylesheet.css" rel="stylesheet" />
-         <link href="fonts/gumball/stylesheet.css" rel="stylesheet" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+            rel="stylesheet"
+          />
+          <link rel="stylesheet" href="https://use.typekit.net/jcz5hcx.css" />
+          <link rel="stylesheet" href="https://use.typekit.net/jcz5hcx.css" />
         </Head>
         <body>
           <Main />
