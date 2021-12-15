@@ -17,21 +17,29 @@ const BannerLogo = styled((props) => {
     </Box>
   );
 })`
-  color: white;
   display: flex;
+  align-items: flex-start;
+  font-size: 1.25rem;
   .logo {
+    width: 2em;
     margin-right: 1em;
+    height: 100%;
+  }
+  h5 {
+    color: white;
+    font-size: inherit;
   }
 `;
 
 const Header = styled((props) => {
   return (
     <Box component="header" {...props}>
-      <BannerLogo />
-      <MainMenu />
+      <BannerLogo className="banner-logo" />
+      <MainMenu className="menu" />
       <Box className="wrapper-right">
         <Button>Coming Soon</Button>
         <SocialsMenu
+          className="socials"
           socials={{
             discord: "",
             twitter: "",
@@ -55,6 +63,41 @@ const Header = styled((props) => {
       margin-right: 3rem;
       font-family: relaxia;
     }
+  }
+
+  ${({ theme }) => theme.breakpoints.down("lg")} {
+    grid-template-columns: 1fr 1fr;
+    height: 180px;
+
+    .banner-logo {
+      font-size: 1rem;
+    }
+
+    .wrapper-right {
+    }
+
+    .menu {
+      grid-row: 2;
+      grid-column: span 2;
+    }
+  }
+
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+
+    grid-template-columns: 1fr;
+    
+    .wrapper-right {
+      button {
+        display: none;
+      }
+    }
+
+    .menu {
+      grid-row: 3;
+      grid-column: initial;
+      font-size: 1.125rem;
+    }
+
   }
 `;
 

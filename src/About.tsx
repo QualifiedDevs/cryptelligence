@@ -9,15 +9,16 @@ const MockupsGif = styled((props) => {
     <Box {...props}>
       <Image
         src={mockups}
-        layout="fill"
-        objectFit="contain"
+        layout="responsive"
+        objectFit="cover"
         objectPosition="center"
       />
     </Box>
   );
 })`
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1;
+
   position: relative;
 `;
 
@@ -45,7 +46,7 @@ const About = styled((props) => {
             in the entertaining universe of Cryptelligence.
           </Typography>
         </Box>
-        <MockupsGif />
+        <MockupsGif className="mockups"/>
       </Container>
     </Box>
   );
@@ -63,7 +64,34 @@ const About = styled((props) => {
     }
 
     p {
-        margin-bottom: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  ${({ theme }) => theme.breakpoints.down("lg")} {
+    .container {
+      h2 {
+        font-size: 2rem;
+      }
+      p {
+      }
+    }
+  }
+
+  ${({ theme }) => theme.breakpoints.down("md")} {
+
+    .container {
+      grid-template-columns: 1fr;
+      h2 {
+        font-size: 1.8rem;
+      }
+      p {
+      }
+      .mockups {
+        width: 80%;
+        margin: auto;
+        margin-top: 5rem;
+      }
     }
   }
 `;

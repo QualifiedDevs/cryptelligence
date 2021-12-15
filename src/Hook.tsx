@@ -27,7 +27,7 @@ const Hook = styled((props) => {
       <Box {...props}>
         <Header />
         <Box className="contents">
-          <Typography variant="h1" sx={{mt: 5}}>
+          <Typography variant="h1" sx={{ mt: 5 }}>
             <b>Cryptelligence</b>
             <br />
             Society
@@ -52,7 +52,28 @@ const Hook = styled((props) => {
     );
 
     h1 {
-        text-align: center;
+      text-align: center;
+    }
+  }
+
+  ${({ theme }) => theme.breakpoints.down("lg")} {
+    h1 {
+      font-size: 4.5rem;
+    }
+  }
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+  ${({ theme }) => theme.breakpoints.down("sx")} {
+    h1 {
+      font-size: 1.5rem;
     }
   }
 `;

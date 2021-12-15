@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Avatar = styled((props) => {
   return (
-    <Box {...props}>
+    <Box {...props} className={`${props.className} avatar`}>
       <Box sx={{mb: 2}} className="image-wrapper">
         <Image src={props.src} layout="fill" objectFit="contain" />
       </Box>
@@ -26,7 +26,7 @@ const Avatar = styled((props) => {
 
 const Carousel = styled((props) => {
   return (
-    <Box {...props}>
+    <Box {...props} className={`${props.className} carousel`}>
       <Avatar src="/mockups/heist.jpg" name="CryptoOriginal" />
       <Avatar src="/mockups/sword.jpg" name="Engineer" />
       <Avatar src="/mockups/android.jpg" name="Android" />
@@ -58,6 +58,42 @@ const Avatars = styled((props) => {
   background: #0d0b1c;
 
   .container {
+  }
+
+  ${({theme}) => theme.breakpoints.down("lg")} {
+    .carousel {
+      .avatar {
+        :last-of-type, :first-of-type {
+          display: none;
+        }
+      }
+    }
+  }
+
+  ${({theme}) => theme.breakpoints.down("md")} {
+    h2 {
+      font-size: 2rem;
+    }
+    h4 {
+      font-size: 1rem;
+    }
+    img {
+      
+    }
+    .carousel {
+      .avatar {
+        width: 200px;
+      }
+    }
+  }
+
+  
+  ${({theme}) => theme.breakpoints.down("sm")} {
+    .carousel {
+      .avatar {
+        width: 200px;
+      }
+    }
   }
 `;
 

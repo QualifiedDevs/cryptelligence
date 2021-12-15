@@ -55,18 +55,19 @@ const Item = styled((props) => {
 const RoadmapContent = styled((props) => {
   return <Box {...props} />;
 })`
-.item {
+  .item {
+    height: 150px;
     margin-bottom: 2em;
 
     :last-of-type {
-        margin-bottom: 0em;
-      }
-}
+      margin-bottom: 0em;
+    }
+  }
 `;
 
 const Roadmap = styled((props) => {
   return (
-    <Box sx={{position: "relative", pb: 8}}>
+    <Box sx={{ position: "relative", pb: 8 }}>
       <Background />
       <Container sx={{ pt: 8 }} {...props}>
         <Typography variant="h2">Roadmap</Typography>
@@ -117,7 +118,6 @@ const Roadmap = styled((props) => {
   );
 })`
   position: relative;
-
 `;
 
 export default Roadmap;
