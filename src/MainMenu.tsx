@@ -38,6 +38,10 @@ const MainMenu = styled((props) => {
   font-family: presicav;
   font-size: 1.4rem;
 
+  nav, ul {
+    width: 100%;
+  }
+
   ul {
     list-style-type: none;
     height: 100%;

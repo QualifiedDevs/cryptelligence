@@ -63,6 +63,12 @@ const RoadmapContent = styled((props) => {
       margin-bottom: 0em;
     }
   }
+
+  ${({theme}) => theme.breakpoints.down("md")} {
+    .item {
+      height: auto;
+    }
+  }
 `;
 
 const Roadmap = styled((props) => {

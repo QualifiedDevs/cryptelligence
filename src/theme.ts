@@ -29,7 +29,7 @@ const theme = createTheme({
     body2: {},
     h1: {
       textTransform: "uppercase",
-      fontWeight: 300,
+      fontWeight: 200,
     },
     h2: {
       textTransform: "uppercase",
@@ -39,21 +39,21 @@ const theme = createTheme({
     },
     h3: {
       textTransform: "uppercase",
-      fontWeight: 300,
+      fontWeight: 200,
     },
     h4: {
       textTransform: "uppercase",
-      fontWeight: 300,
+      fontWeight: 200,
       fontSize: "1.5rem",
     },
     h5: {
       textTransform: "uppercase",
-      fontWeight: 300,
+      fontWeight: 200,
       color: "#97FFFF"
     },
     h6: {
       textTransform: "uppercase",
-      fontWeight: 300,
+      fontWeight: 200,
     },
   },
 });

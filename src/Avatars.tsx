@@ -6,7 +6,7 @@ import Image from "next/image";
 const Avatar = styled((props) => {
   return (
     <Box {...props} className={`${props.className} avatar`}>
-      <Box sx={{mb: 2}} className="image-wrapper">
+      <Box sx={{ mb: 2 }} className="image-wrapper">
         <Image src={props.src} layout="fill" objectFit="contain" />
       </Box>
       <Typography variant="h5">{props.name}</Typography>
@@ -20,7 +20,7 @@ const Avatar = styled((props) => {
   }
 
   h5 {
-      color: ${({theme}) => theme.palette.text.secondary};
+    color: ${({ theme }) => theme.palette.text.secondary};
   }
 `;
 
@@ -37,6 +37,31 @@ const Carousel = styled((props) => {
 })`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+
+  .avatar {
+    width: clamp(250px, 20%, 300px);
+  }
+
+  ${({ theme }) => theme.breakpoints.down("lg")} {
+    .avatar {
+      :last-of-type,
+      :first-of-type {
+        display: none;
+      }
+    }
+  }
+
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    .avatar {
+      width: 200px;
+    }
+  }
+
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    .avatar {
+      width: 200px;
+    }
+  }
 `;
 
 const Avatars = styled((props) => {
@@ -48,9 +73,9 @@ const Avatars = styled((props) => {
           Unique Combinations | 7 Classes | 300+ Traits
         </Typography>
       </Container>
-      <Container maxWidth="xl">
+      <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
         <Carousel />
-      </Container>
+      </Box>
     </Box>
   );
 })`
@@ -60,17 +85,7 @@ const Avatars = styled((props) => {
   .container {
   }
 
-  ${({theme}) => theme.breakpoints.down("lg")} {
-    .carousel {
-      .avatar {
-        :last-of-type, :first-of-type {
-          display: none;
-        }
-      }
-    }
-  }
-
-  ${({theme}) => theme.breakpoints.down("md")} {
+  ${({ theme }) => theme.breakpoints.down("md")} {
     h2 {
       font-size: 2rem;
     }
@@ -78,21 +93,6 @@ const Avatars = styled((props) => {
       font-size: 1rem;
     }
     img {
-      
-    }
-    .carousel {
-      .avatar {
-        width: 200px;
-      }
-    }
-  }
-
-  
-  ${({theme}) => theme.breakpoints.down("sm")} {
-    .carousel {
-      .avatar {
-        width: 200px;
-      }
     }
   }
 `;
