@@ -35,31 +35,29 @@ const Carousel = styled((props) => {
     </Box>
   );
 })`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
   .avatar {
-    width: clamp(250px, 20%, 300px);
+    margin: 0 0.75rem;
   }
 
   ${({ theme }) => theme.breakpoints.down("lg")} {
     .avatar {
-      :last-of-type,
-      :first-of-type {
-        display: none;
-      }
     }
   }
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     .avatar {
-      width: 200px;
+
     }
   }
 
   ${({ theme }) => theme.breakpoints.down("sm")} {
     .avatar {
-      width: 200px;
+
     }
   }
 `;
