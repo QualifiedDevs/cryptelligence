@@ -22,6 +22,14 @@ const SocialIcon = styled((props) => {
   );
 })`
   width: 35px;
+
+  img {
+    transform: box-shadow 0.5s;
+
+    :hover {
+      box-shadow: 0px 0px 4px 4px ${({ theme }) => theme.palette.primary.main};
+    }
+  }
 `;
 
 const SocialsMenu = styled((props) => {
@@ -43,8 +51,7 @@ const SocialsMenu = styled((props) => {
     </Box>
   );
 })`
-
-ul {
+  ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -52,15 +59,15 @@ ul {
     display: flex;
     align-items: center;
     a {
-        margin: 0 .8em;
-        &:first-child {
-            margin-left: 0;
-        }
-        &:last-child {
-           margin-right: 0;
-        }
+      margin: 0 0.8em;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
     }
-}
+  }
 `;
 
 export default SocialsMenu;

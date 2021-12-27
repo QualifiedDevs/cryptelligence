@@ -34,7 +34,7 @@ const theme = createTheme({
     h2: {
       textTransform: "uppercase",
       fontSize: "3rem",
-      fontWeight: 900,
+      fontWeight: 500,
       color: "#97FFFF",
     },
     h3: {

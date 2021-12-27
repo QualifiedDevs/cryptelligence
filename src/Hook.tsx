@@ -53,6 +53,9 @@ const Hook = styled((props) => {
 
     h1 {
       text-align: center;
+      b {
+        font-weight: 400;
+      }
     }
   }
 

@@ -7,25 +7,49 @@ import mockups from "../public/mockups.gif";
 const MockupsGif = styled((props) => {
   return (
     <Box {...props}>
-      <Image
-        src={mockups}
-        layout="responsive"
-        objectFit="cover"
-        objectPosition="center"
-      />
+      <img src="/vector-images/image-border.png" className="image-border" />
+      <Box className="gif-wrapper">
+        <Image
+          src={mockups}
+          layout="responsive"
+          objectFit="cover"
+          objectPosition="center"
+        />
+      </Box>
+      <img src="/vector-images/gif-decoration.png" className="decorator" />
     </Box>
   );
 })`
   width: 100%;
   aspect-ratio: 1;
-
   position: relative;
+
+  .gif-wrapper {
+    position: relative;
+    padding: 1.5em;
+    img {
+      clip-path: polygon(0% 90%, 10% 100%, 100% 100%, 100% 10%, 90% 0%, 0% 0%);
+    }
+  }
+
+  .image-border {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .decorator {
+    position: absolute;
+    top: 50%;
+    right: -96%;
+    width: 100%;
+  }
 `;
 
 const About = styled((props) => {
   return (
     <Box {...props}>
-      <Container className="container">
+      <Container {...props} className="container">
         <Box className="text-wrapper">
           <Typography variant="h2">
             About
@@ -46,12 +70,14 @@ const About = styled((props) => {
             in the entertaining universe of Cryptelligence.
           </Typography>
         </Box>
-        <MockupsGif className="mockups"/>
+        <MockupsGif className="mockups" />
       </Container>
     </Box>
   );
 })`
+  position: relative;
   padding: 2rem 0 8rem;
+  overflow: hidden;
 
   background: rgb(6, 3, 9);
   .container {
@@ -68,6 +94,9 @@ const About = styled((props) => {
     }
   }
 
+  .mockups-container {
+  }
+
   ${({ theme }) => theme.breakpoints.down("lg")} {
     .container {
       h2 {
@@ -79,7 +108,6 @@ const About = styled((props) => {
   }
 
   ${({ theme }) => theme.breakpoints.down("md")} {
-
     .container {
       grid-template-columns: 1fr;
       h2 {
