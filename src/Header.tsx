@@ -4,6 +4,7 @@ import { Container, Box, Button, Typography } from "@mui/material";
 import Logo from "./Logo";
 import MainMenu from "./MainMenu";
 import SocialsMenu from "./SocialsMenu";
+import MenuButton from "./MenuButton"
 
 const BannerLogo = styled((props) => {
   return (
@@ -46,11 +47,12 @@ const Header = styled((props) => {
           }}
         />
       </Box>
+      <MenuButton className="menu-button"/>
     </Box>
   );
 })`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 3fr 5fr 3fr;
   justify-items: center;
   align-items: center;
   height: 124px;
@@ -63,6 +65,10 @@ const Header = styled((props) => {
       margin-right: 3rem;
       font-family: relaxia;
     }
+  }
+
+  .menu-button {
+    display: none;
   }
 
   ${({ theme }) => theme.breakpoints.down("lg")} {
@@ -84,18 +90,30 @@ const Header = styled((props) => {
 
   ${({ theme }) => theme.breakpoints.down("sm")} {
 
-    grid-template-columns: 1fr;
+    height: 100px;
+
+    display: flex;
+    padding: 2rem 2rem 0 1rem;
+    justify-content: space-between;
     
     .wrapper-right {
+      display: none;
       button {
         display: none;
       }
     }
 
     .menu {
+      display: none;
       grid-row: 3;
       grid-column: initial;
       font-size: 1.125rem;
+    }
+
+    .menu-button {
+      display: initial;
+      width: 40px;
+      height: 40px;
     }
 
   }

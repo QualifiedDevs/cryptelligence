@@ -38,7 +38,7 @@ const MainMenu = styled((props) => {
   font-family: presicav;
   font-size: 1.4rem;
 
-  nav, ul {
+  &, ul {
     width: 100%;
   }
 
@@ -46,7 +46,8 @@ const MainMenu = styled((props) => {
     list-style-type: none;
     height: 100%;
     display: flex;
-    align-items: space-around;
+    justify-content: space-around;
+    align-items: center;
     margin: 0;
     padding: 0;
     li {

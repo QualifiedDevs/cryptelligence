@@ -3,6 +3,7 @@ import { Box, Container, Typography } from "@mui/material";
 
 import Image from "next/image";
 import mockups from "../public/mockups.gif";
+import divider from "../public/vector-images/divider.svg";
 
 const MockupsGif = styled((props) => {
   return (
@@ -49,12 +50,15 @@ const MockupsGif = styled((props) => {
 const About = styled((props) => {
   return (
     <Box {...props}>
-      <Container {...props} className="container">
+      <Container className="container">
         <Box className="text-wrapper">
           <Typography variant="h2">
             About
             <br />
             Cryptelligence
+            <Box className="divider">
+              <Image src={divider} layout="fill" objectFit="contain" />
+            </Box>
           </Typography>
           <Typography>
             Cryptelligence Society is a limited collection of 10101 NFT avatars
@@ -85,12 +89,24 @@ const About = styled((props) => {
     grid-template-columns: 3fr 3fr;
     grid-column-gap: 5rem;
 
-    h2 {
-      margin-bottom: 5rem;
-    }
+    .text-wrapper {
+      position: relative;
 
-    p {
-      margin-bottom: 2rem;
+      h2 {
+        position: relative;
+        margin-bottom: 5rem;
+        .divider {
+          position: absolute;
+          bottom: -20%;
+          right: -4%;
+          width: 1600px;
+          height: 16px;
+        }
+      }
+
+      p {
+        margin-bottom: 2rem;
+      }
     }
   }
 
@@ -112,6 +128,12 @@ const About = styled((props) => {
       grid-template-columns: 1fr;
       h2 {
         font-size: 1.8rem;
+        .divider {
+          transform: translate(30%);
+          bottom: 40px;
+          right: initial;
+          left: -1600px !important;
+        }
       }
       p {
       }

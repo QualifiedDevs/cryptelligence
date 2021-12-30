@@ -16,25 +16,23 @@ const Background = styled((props) => {
   position: fixed;
   z-index: -1;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 `;
 
 const Hook = styled((props) => {
   return (
-    <>
+    <Box {...props} id="hook">
+      <Header />
       <Background />
-      <Box {...props}>
-        <Header />
-        <Box className="contents">
-          <Typography variant="h1" sx={{ mt: 5 }}>
-            <b>Cryptelligence</b>
-            <br />
-            Society
-          </Typography>
-        </Box>
+      <Box className="contents">
+        <Typography variant="h1" sx={{ mt: 5 }}>
+          <b>Cryptelligence</b>
+          <br />
+          Society
+        </Typography>
       </Box>
-    </>
+    </Box>
   );
 })`
   height: 100vh;
@@ -70,8 +68,12 @@ const Hook = styled((props) => {
     }
   }
   ${({ theme }) => theme.breakpoints.down("sm")} {
-    h1 {
-      font-size: 2rem;
+    .contents {
+
+      height: 500px;
+      h1 {
+        font-size: 2rem;
+      }
     }
   }
   ${({ theme }) => theme.breakpoints.down("sx")} {
