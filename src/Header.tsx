@@ -29,6 +29,9 @@ const BannerLogo = styled((props) => {
   h5 {
     color: white;
     font-size: inherit;
+    b {
+      letter-spacing: .2em;
+    }
   }
 `;
 

@@ -28,6 +28,7 @@ const theme = createTheme({
     },
     body2: {},
     h1: {
+      fontSize: "5rem",
       textTransform: "uppercase",
       fontWeight: 200,
     },

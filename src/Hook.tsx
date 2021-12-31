@@ -59,31 +59,32 @@ const Hook = styled((props) => {
       text-align: center;
       b {
         font-weight: 400;
+        letter-spacing: .2em;
       }
     }
   }
 
   ${({ theme }) => theme.breakpoints.down("lg")} {
     h1 {
-      font-size: 4.5rem;
+      font-size: 3.6rem;
     }
   }
   ${({ theme }) => theme.breakpoints.down("md")} {
     h1 {
-      font-size: 3rem;
+      font-size: 2.7rem;
     }
   }
   ${({ theme }) => theme.breakpoints.down("sm")} {
     height: 500px;
     .contents {
       h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
     }
   }
   ${({ theme }) => theme.breakpoints.down("sx")} {
     h1 {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
   }
 `;

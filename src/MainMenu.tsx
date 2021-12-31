@@ -17,6 +17,7 @@ const MenuItem = styled((props) => {
   );
 })`
   a {
+    font-weight: 300;
     transition: text-shadow 0.3s;
     :hover {
       text-shadow: 0px 0px 8px rgba(151, 255, 255, 100%);

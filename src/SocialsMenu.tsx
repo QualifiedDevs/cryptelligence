@@ -77,8 +77,8 @@ const SocialsMenu = styled((props) => {
 
   let index = 0;
   for (const item in props.socials) {
-    console.log(item)
     items[index++] = (
+      //@ts-ignore (Why tf does this have a problem? wtf?)
       <SocialIcon icon={icons[item]} href={props.socials[item]} key={index} />
     );
   }
