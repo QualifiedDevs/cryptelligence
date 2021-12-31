@@ -100,6 +100,13 @@ const RoadmapContent = styled((props) => {
         transform: translate(10px);
       }
     }
+
+    ${({theme}) => theme.breakpoints.down("md")} {
+      flex-direction: column;
+      .stage-label {
+        margin-bottom: 1rem;
+      }
+    }
   }
 `;
 
