@@ -64,7 +64,9 @@ const RoadmapContent = styled((props) => {
   const items = props.children.map((item: JSX.Element, index: number) => {
     return (
       <Box key={index + 1} className="stage-wrapper">
-        <Typography variant="h6" className="stage-label">Stage {index + 1}</Typography>
+        <Typography variant="h6" className="stage-label">
+          Stage {index + 1}
+        </Typography>
         {item}
       </Box>
     );
@@ -72,18 +74,31 @@ const RoadmapContent = styled((props) => {
   return <Box {...props}>{items}</Box>;
 })`
   .stage-wrapper {
+    position: relative;
     display: flex;
 
     .stage-label {
       margin-top: 1em;
       white-space: nowrap;
-      margin-right: .8em;
+      margin-right: 0.8em;
+      transition: text-shadow 0.2s ease, color 0.2s ease;
     }
 
     .item {
       width: 100%;
       min-height: 150px;
       margin-bottom: 2em;
+      transition: transform 0.25s;
+    }
+
+    :hover {
+      .stage-label {
+        color: ${({theme}) => theme.palette.primary.main};
+        text-shadow: 0px 0px 6px rgba(151, 255, 255, 100%);
+      }
+      .item {
+        transform: translate(10px);
+      }
     }
   }
 `;

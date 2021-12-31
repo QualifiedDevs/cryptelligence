@@ -115,6 +115,7 @@ const Header = styled((props) => {
       width: 40px;
       height: 40px;
     }
+    
 
   }
 `;

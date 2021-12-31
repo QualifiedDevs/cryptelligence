@@ -17,9 +17,9 @@ const MenuItem = styled((props) => {
   );
 })`
   a {
-    transition: color 0.15s;
+    transition: text-shadow 0.3s;
     :hover {
-      color: #0077ff;
+      text-shadow: 0px 0px 8px rgba(151, 255, 255, 100%);
     }
   }
 `;
