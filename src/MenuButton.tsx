@@ -116,7 +116,7 @@ const TempMenu = styled((props) => {
 `;
 
 const MenuButton = styled((props) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
