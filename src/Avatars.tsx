@@ -17,9 +17,6 @@ const Avatar = styled((props) => {
     </Box>
   );
 })`
-  display: grid;
-  justify-content: center;
-
   .image-wrapper {
     position: relative;
     width: 250px;
@@ -34,14 +31,16 @@ const Avatar = styled((props) => {
 const Carousel = styled((props) => {
   return (
     <Box {...props} className={`${props.className} carousel`}>
+      {/* <div className="overlay" /> */}
       <Swiper
         centeredSlides
         loop
         autoplay={{
           delay: 2500,
+          disableOnInteraction: false,
         }}
-        spaceBetween={50}
-        slidesPerView={3}
+        slidesPerView="auto"
+        spaceBetween={30}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >
@@ -70,7 +69,51 @@ const Carousel = styled((props) => {
     </Box>
   );
 })`
+  position: relative;
   overflow: hidden;
+  width: 80%;
+  .swiper-slide {
+    width: fit-content;
+  }
+
+  background: linear-gradient(
+    90deg,
+    rgba(13, 11, 28, 1) 0%,
+    rgba(13, 11, 28, 0) 20%,
+    rgba(13, 11, 28, 0) 80%,
+    rgba(13, 11, 28, 1) 100%
+  );
+
+  .swiper-slide {
+    .avatar {
+      h5 {
+        transition: text-shadow 1s;
+      }
+    }
+  }
+
+  .swiper-slide-active {
+    .avatar {
+      h5 {
+        text-shadow: 0px 0px 8px rgba(151, 255, 255, 100%);
+      }
+    }
+  }
+
+  .overlay {
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(13, 11, 28, 1) 0%,
+      rgba(13, 11, 28, 0) 20%,
+      rgba(13, 11, 28, 0) 80%,
+      rgba(13, 11, 28, 1) 100%
+    );
+  }
 
   ${({ theme }) => theme.breakpoints.down("lg")} {
   }

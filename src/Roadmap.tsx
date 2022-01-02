@@ -81,6 +81,7 @@ const RoadmapContent = styled((props) => {
 })`
   .stage-wrapper {
     position: relative;
+    display: flex;
 
     .stage-label {
       margin-top: 1em;
