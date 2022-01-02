@@ -8,8 +8,13 @@ import theme from "../src/theme";
 import dynamic from "next/dynamic";
 import { Toaster } from "react-hot-toast";
 
+import SwiperCore, { Autoplay } from "swiper";
+
 export default function MyApp(props: AppProps) {
   const { Component, pageProps } = props;
+
+  SwiperCore.use([Autoplay])
+
   return (
     <React.Fragment>
       <Head>

@@ -17,6 +17,9 @@ const Avatar = styled((props) => {
     </Box>
   );
 })`
+  display: grid;
+  justify-content: center;
+
   .image-wrapper {
     position: relative;
     width: 250px;
@@ -32,9 +35,13 @@ const Carousel = styled((props) => {
   return (
     <Box {...props} className={`${props.className} carousel`}>
       <Swiper
+        centeredSlides
+        loop
+        autoplay={{
+          delay: 2500,
+        }}
         spaceBetween={50}
         slidesPerView={3}
-        loop
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >
@@ -64,7 +71,7 @@ const Carousel = styled((props) => {
   );
 })`
   overflow: hidden;
-  
+
   ${({ theme }) => theme.breakpoints.down("lg")} {
   }
 
