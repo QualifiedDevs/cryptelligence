@@ -72,6 +72,11 @@ const Carousel = styled((props) => {
   position: relative;
   overflow: hidden;
   width: 1400px;
+
+  .swiper {
+    padding-top: 1rem;
+  }
+
   .swiper-slide {
     width: fit-content;
   }
@@ -86,6 +91,9 @@ const Carousel = styled((props) => {
 
   .swiper-slide {
     .avatar {
+      .image-wrapper {
+        transition: transform .3s;
+      }
       h5 {
         transition: text-shadow 1s;
       }
@@ -94,6 +102,9 @@ const Carousel = styled((props) => {
 
   .swiper-slide-active {
     .avatar {
+      .image-wrapper {
+        transform: scale(1.1, 1.1);
+      }
       h5 {
         text-shadow: 0px 0px 8px rgba(151, 255, 255, 100%);
       }
