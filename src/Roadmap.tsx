@@ -3,7 +3,8 @@ import { Box, Container, Typography } from "@mui/material";
 
 import Image from "next/image";
 import bg from "../public/backgrounds/roadmap.jpg";
-import roadmapItem from "../public/vector-images/roadmap-item.svg";
+
+import RoadmapItemBackground from "./vector-images/RoadmapItemBackground"
 
 import RoadmapLine from "./vector-images/RoadmapLine";
 
@@ -25,9 +26,7 @@ const Background = styled((props) => {
 const Item = styled((props) => {
   return (
     <Box {...props} className={`${props.className} item`}>
-      <Box className="bg">
-        <Image src={roadmapItem} layout="fill" objectFit="cover" />
-      </Box>
+      <RoadmapItemBackground className="bg"/>
       <Typography variant="h5" component="h4" sx={{ mb: 2 }}>
         {props.milestone}
       </Typography>
@@ -45,6 +44,7 @@ const Item = styled((props) => {
     z-index: -1;
     top: 0;
     left: 0;
+
   }
 
   p {
