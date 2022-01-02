@@ -39,10 +39,10 @@ const Carousel = styled((props) => {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        slidesPerView="auto"
         spaceBetween={30}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
+        slidesPerView="auto"
       >
         <SwiperSlide>
           <Avatar src="/mockups/android.jpg" name="Android" />
@@ -71,7 +71,7 @@ const Carousel = styled((props) => {
 })`
   position: relative;
   overflow: hidden;
-  width: 80%;
+  width: 1400px;
   .swiper-slide {
     width: fit-content;
   }
@@ -116,12 +116,33 @@ const Carousel = styled((props) => {
   }
 
   ${({ theme }) => theme.breakpoints.down("lg")} {
+    width: 850px;
   }
 
   ${({ theme }) => theme.breakpoints.down("md")} {
+    width: 690px;
+    .avatar {
+      .image-wrapper {
+        width: 200px;
+        height: 200px;
+      }
+      h5 {
+        font-size: 1.2rem;
+      }
+    }
   }
 
   ${({ theme }) => theme.breakpoints.down("sm")} {
+    width: 310px;
+    .avatar {
+      .image-wrapper {
+        width: 250px;
+        height: 250px;
+      }
+      h5 {
+        font-size: 1.6rem;
+      }
+    }
   }
 `;
 
