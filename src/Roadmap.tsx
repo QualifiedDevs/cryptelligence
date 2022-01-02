@@ -44,7 +44,6 @@ const Item = styled((props) => {
     z-index: -1;
     top: 0;
     left: 0;
-
   }
 
   p {
@@ -95,6 +94,9 @@ const RoadmapContent = styled((props) => {
       min-height: 150px;
       margin-bottom: 2em;
       transition: transform 0.25s;
+      .bg {
+        transition: transform 0.25s;
+      }
     }
 
     :hover {
@@ -103,7 +105,10 @@ const RoadmapContent = styled((props) => {
         text-shadow: 0px 0px 6px rgba(151, 255, 255, 100%);
       }
       .item {
-        transform: translate(10px);
+        transform: translate(2%);
+        .bg {
+          transform: scale(1, 1.05);
+        }
       }
     }
 

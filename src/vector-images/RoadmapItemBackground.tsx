@@ -26,8 +26,8 @@ const RoadmapItemBackground = styled((props) => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stop-color="#16171E" />
-          <stop offset="0.959031" stop-opacity="0" />
-          <stop offset="0.984375" stop-opacity="0" />
+          <stop offset="0.959031" stopOpacity="0" />
+          <stop offset="0.984375" stopOpacity="0" />
         </linearGradient>
       </defs>
     </SvgIcon>
