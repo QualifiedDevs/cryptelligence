@@ -95,7 +95,7 @@ const RoadmapContent = styled((props) => {
       margin-bottom: 2em;
       transition: transform 0.25s;
       .bg {
-        transition: transform 0.25s;
+
       }
     }
 
@@ -107,7 +107,7 @@ const RoadmapContent = styled((props) => {
       .item {
         transform: translate(2%);
         .bg {
-          transform: scale(1, 1.05);
+
         }
       }
     }
