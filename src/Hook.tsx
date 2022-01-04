@@ -19,9 +19,9 @@ const Background = styled((props) => {
   height: 100%;
   overflow: hidden;
 
-  ${({theme}) => theme.breakpoints.down("sm")} {
-  top: 50px;
-  height: 500px;
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    top: 50px;
+    height: 500px;
   }
 `;
 
@@ -44,7 +44,6 @@ const Hook = styled((props) => {
   display: flex;
   flex-direction: column;
   .contents {
-    padding-top: 1rem;
     flex-grow: 1;
 
     background: linear-gradient(
@@ -58,8 +57,8 @@ const Hook = styled((props) => {
     h1 {
       text-align: center;
       b {
-        font-weight: 400;
-        letter-spacing: .2em;
+        font-weight: 300;
+        letter-spacing: 0.15em;
       }
     }
   }
