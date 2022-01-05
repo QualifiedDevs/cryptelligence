@@ -1,10 +1,9 @@
+import React, { useRef } from "react";
 import { styled } from "@mui/material/styles";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Typography, ButtonBase } from "@mui/material";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { Pagination } from "swiper";
 import "swiper/css";
-import "swiper/css/pagination";
 
 import Image from "next/image";
 
@@ -31,27 +30,64 @@ const Avatar = styled((props) => {
 `;
 
 const Pagination = styled((props) => {
-
-  const Bullet = styled((props) => {
+  const Bullet = (props) => {
     return (
-      <Box component="button"  onClick={() => {}} {...props}>
-        
-      </Box>
+      <ButtonBase disableRipple {...props}>
+        <div className="button-visible" />
+      </ButtonBase>
     );
-  })``;
-  
+  };
 
-  // Get swiper slider #
-  // Get function for setting slider target
+  const buttons = Array(props.numslides)
+    .fill(null)
+    .map((ele, index) => {
+      return (
+        <Bullet
+          onClick={() => {
+            props.swiperRef.current.slideToLoop(index, 400);
+          }}
+        />
+      );
+    });
 
-  return (
-    <Box {...props}>
+  return <Box {...props}>{buttons}</Box>;
+})`
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  grid-column-gap: 10px;
+
+  width: max(350px, 40vw);
+  button {
+    display: grid;
+    place-items: center;
+    height: 12px;
+
+    :hover {
+      .button-visible {
+        background: rgb(85, 131, 192);
+      }
+    }
+  }
+  .button-visible {
+    display: grid;
+    place-items: center;
+    background: rgb(78, 97, 154);
+    height: 4px;
+    width: 40px;
+
+    transition: transform 0.25s ease, background 0.25s ease,
+      box-shadow 0.25s ease;
       
-    </Box>
-  );
-})``;
+    .active {
+      transform: scale(1, 1.25);
+      background: ${({ theme }) => theme.palette.primary.main};
+      box-shadow: 0px 0px 6px rgba(151, 255, 255, 100%);
+    }
+  }
+`;
 
 const Carousel = styled((props) => {
+  const swiperRef = useRef();
 
   return (
     <Box {...props} className={`${props.className} carousel`}>
@@ -65,8 +101,10 @@ const Carousel = styled((props) => {
           disableOnInteraction: false,
         }}
         spaceBetween={80}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        onSwiper={(swiper) => {
+          console.log("swiper", swiper.slideTo);
+          swiperRef.current = swiper;
+        }}
         slidesPerView="auto"
       >
         <SwiperSlide>
@@ -91,6 +129,7 @@ const Carousel = styled((props) => {
           <Avatar src="/mockups/technomancer.jpg" name="Technomancer" />
         </SwiperSlide>
       </Swiper>
+      <Pagination swiperRef={swiperRef} numslides={7} sx={{ mx: "auto" }} />
     </Box>
   );
 })`
@@ -99,7 +138,8 @@ const Carousel = styled((props) => {
   width: 100%;
 
   .swiper {
-    padding-top: 2rem;
+    padding-top: 4rem;
+    margin-bottom: 2.5rem;
   }
 
   .swiper-slide {
@@ -183,27 +223,6 @@ const Carousel = styled((props) => {
     }
   }
 `;
-
-/*
-  * CAROUSEL INSTRUCTION
-
-Swipeable (FUCKING HOW)
-Must be Infinite
-When between selections, snap back to nearest image
-Responsively grow/shrink to fill available space.
-To meet these criteria, ideally I'm using a responsive grid on top of a scrollable div.
-The keyframe of an animation for each image depends on scroll position.
-There must be momentum for scrolling.
-Auto-scroll is simple.
-To snap, after scrolling has been performed check to see which is nearest. We can use modulus to find snap positions.
-
-Questions:
-How am I going to handle infinite? Probably grid-column reordering. Yup that makes sense. How do I determine the center?
-How do I make it swipeable?
-How do I keep momentum on scroll?
-How do I 
-
-*/
 
 const Avatars = styled((props) => {
   return (
