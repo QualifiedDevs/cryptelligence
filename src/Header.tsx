@@ -30,7 +30,8 @@ const BannerLogo = styled((props) => {
     color: white;
     font-size: inherit;
     b {
-      letter-spacing: .2em;
+      letter-spacing: .15em;
+      font-weight: 300;
     }
   }
 `;

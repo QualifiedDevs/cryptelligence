@@ -2,8 +2,9 @@ import { styled } from "@mui/material/styles";
 import { Box, Container, Typography } from "@mui/material";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+// import { Pagination } from "swiper";
 import "swiper/css";
+import "swiper/css/pagination";
 
 import Image from "next/image";
 
@@ -20,7 +21,7 @@ const Avatar = styled((props) => {
   .image-wrapper {
     position: relative;
     aspect-ratio: 1;
-    width: 400px;
+    width: clamp(250px, 30vw, 400px);
   }
 
   h5 {
@@ -29,13 +30,36 @@ const Avatar = styled((props) => {
   }
 `;
 
+const Pagination = styled((props) => {
+
+  const Bullet = styled((props) => {
+    return (
+      <Box component="button"  onClick={() => {}} {...props}>
+        
+      </Box>
+    );
+  })``;
+  
+
+  // Get swiper slider #
+  // Get function for setting slider target
+
+  return (
+    <Box {...props}>
+      
+    </Box>
+  );
+})``;
+
 const Carousel = styled((props) => {
+
   return (
     <Box {...props} className={`${props.className} carousel`}>
       {/* <div className="overlay" /> */}
       <Swiper
         centeredSlides
         loop
+        slideToClickedSlide
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
@@ -72,10 +96,10 @@ const Carousel = styled((props) => {
 })`
   position: relative;
   overflow: hidden;
-  width: 1400px;
+  width: 100%;
 
   .swiper {
-    padding-top: 1rem;
+    padding-top: 2rem;
   }
 
   .swiper-slide {
@@ -93,11 +117,19 @@ const Carousel = styled((props) => {
   .swiper-slide {
     .avatar {
       .image-wrapper {
-        transition: transform .3s;
+        transition: transform 0.3s;
       }
       h5 {
-        transition: text-shadow 1s;
+        transition: text-shadow 1s ease, opacity 0.35s ease;
+        opacity: 20%;
       }
+    }
+  }
+
+  .swiper-slide-prev,
+  .swiper-slide-next {
+    h5 {
+      opacity: 50% !important;
     }
   }
 
@@ -108,6 +140,7 @@ const Carousel = styled((props) => {
       }
       h5 {
         text-shadow: 0px 0px 8px rgba(151, 255, 255, 100%);
+        opacity: 100%;
       }
     }
   }
@@ -128,31 +161,24 @@ const Carousel = styled((props) => {
   }
 
   ${({ theme }) => theme.breakpoints.down("lg")} {
-    width: 850px;
   }
 
   ${({ theme }) => theme.breakpoints.down("md")} {
-    width: 690px;
     .avatar {
       .image-wrapper {
-        width: 200px;
-        height: 200px;
       }
       h5 {
-        font-size: 1.2rem;
+        font-size: 1.75rem;
       }
     }
   }
 
   ${({ theme }) => theme.breakpoints.down("sm")} {
-    width: 310px;
     .avatar {
       .image-wrapper {
-        width: 250px;
-        height: 250px;
       }
       h5 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
       }
     }
   }

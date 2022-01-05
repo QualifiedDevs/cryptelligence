@@ -31,7 +31,7 @@ const Hook = styled((props) => {
       <Header />
       <Background />
       <Box className="contents">
-        <Typography variant="h1" sx={{ mt: 0 }}>
+        <Typography variant="h1" sx={{ mt: 2 }}>
           <b>Cryptelligence</b>
           <br />
           Society

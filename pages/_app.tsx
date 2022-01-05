@@ -8,12 +8,12 @@ import theme from "../src/theme";
 import dynamic from "next/dynamic";
 import { Toaster } from "react-hot-toast";
 
-import SwiperCore, { Autoplay } from "swiper";
+import SwiperCore, { Autoplay, Pagination } from "swiper";
 
 export default function MyApp(props: AppProps) {
   const { Component, pageProps } = props;
 
-  SwiperCore.use([Autoplay])
+  SwiperCore.use([Autoplay, Pagination])
 
   return (
     <React.Fragment>
