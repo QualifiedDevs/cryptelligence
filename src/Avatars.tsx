@@ -10,7 +10,7 @@ import Image from "next/image";
 const Avatar = styled((props) => {
   return (
     <Box {...props} className={`${props.className} avatar`}>
-      <Box sx={{ mb: 2 }} className="image-wrapper">
+      <Box sx={{ mb: 6 }} className="image-wrapper">
         <Image src={props.src} layout="fill" objectFit="contain" />
       </Box>
       <Typography variant="h5">{props.name}</Typography>
@@ -19,12 +19,13 @@ const Avatar = styled((props) => {
 })`
   .image-wrapper {
     position: relative;
-    width: 250px;
-    height: 250px;
+    aspect-ratio: 1;
+    width: 400px;
   }
 
   h5 {
     color: ${({ theme }) => theme.palette.text.secondary};
+    font-size: 2rem;
   }
 `;
 
@@ -39,7 +40,7 @@ const Carousel = styled((props) => {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        spaceBetween={30}
+        spaceBetween={80}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
         slidesPerView="auto"
@@ -103,7 +104,7 @@ const Carousel = styled((props) => {
   .swiper-slide-active {
     .avatar {
       .image-wrapper {
-        transform: scale(1.1, 1.1);
+        transform: scale(1.15, 1.15);
       }
       h5 {
         text-shadow: 0px 0px 8px rgba(151, 255, 255, 100%);

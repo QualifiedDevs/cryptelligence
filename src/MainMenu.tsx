@@ -39,7 +39,8 @@ const MainMenu = styled((props) => {
   font-family: presicav;
   font-size: 1.4rem;
 
-  &, ul {
+  &,
+  ul {
     width: 100%;
   }
 
