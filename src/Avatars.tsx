@@ -1,6 +1,12 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import { styled } from "@mui/material/styles";
-import { Box, Container, Typography, ButtonBase } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  ButtonBase,
+  sliderClasses,
+} from "@mui/material";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -43,6 +49,10 @@ const Pagination = styled((props) => {
     .map((ele, index) => {
       return (
         <Bullet
+          key={index}
+          className={(() => {
+            if (props.activeIndex == index) return "active";
+          })()}
           onClick={() => {
             props.swiperRef.current.slideToLoop(index, 400);
           }}
@@ -56,11 +66,16 @@ const Pagination = styled((props) => {
   grid-template-columns: repeat(7, auto);
   grid-column-gap: 10px;
 
-  width: max(350px, 40vw);
+  width: min(350px, 40vw);
+
   button {
     display: grid;
     place-items: center;
-    height: 12px;
+    
+    .button-visible {
+      transition: transform 0.25s ease, background .25s ease,
+      box-shadow 0.25s ease;
+    }
 
     :hover {
       .button-visible {
@@ -68,26 +83,27 @@ const Pagination = styled((props) => {
       }
     }
   }
+
+  button.active {
+    .button-visible {
+      transform: scale(1, 1.25);
+      background: ${({ theme }) => theme.palette.primary.main};
+      box-shadow: 0px 0px 6px rgba(151, 255, 255, 100%);
+    }
+  }
+
   .button-visible {
     display: grid;
     place-items: center;
     background: rgb(78, 97, 154);
     height: 4px;
     width: 40px;
-
-    transition: transform 0.25s ease, background 0.25s ease,
-      box-shadow 0.25s ease;
-      
-    .active {
-      transform: scale(1, 1.25);
-      background: ${({ theme }) => theme.palette.primary.main};
-      box-shadow: 0px 0px 6px rgba(151, 255, 255, 100%);
-    }
   }
 `;
 
 const Carousel = styled((props) => {
   const swiperRef = useRef();
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <Box {...props} className={`${props.className} carousel`}>
@@ -104,6 +120,10 @@ const Carousel = styled((props) => {
         onSwiper={(swiper) => {
           console.log("swiper", swiper.slideTo);
           swiperRef.current = swiper;
+          swiper.on("activeIndexChange", () => {
+            setActiveIndex(swiper.activeIndex - 7);
+            console.log(swiper.activeIndex - 7);
+          });
         }}
         slidesPerView="auto"
       >
@@ -129,7 +149,12 @@ const Carousel = styled((props) => {
           <Avatar src="/mockups/technomancer.jpg" name="Technomancer" />
         </SwiperSlide>
       </Swiper>
-      <Pagination swiperRef={swiperRef} numslides={7} sx={{ mx: "auto" }} />
+      <Pagination
+        swiperRef={swiperRef}
+        numslides={7}
+        sx={{ mx: "auto" }}
+        activeIndex={activeIndex}
+      />
     </Box>
   );
 })`
