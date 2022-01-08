@@ -26,7 +26,7 @@ const Avatar = styled((props) => {
   .image-wrapper {
     position: relative;
     aspect-ratio: 1;
-    width: clamp(250px, 30vw, 400px);
+    width: 400px;
   }
 
   h5 {
@@ -63,18 +63,19 @@ const Pagination = styled((props) => {
   return <Box {...props}>{buttons}</Box>;
 })`
   display: grid;
-  grid-template-columns: repeat(7, auto);
+  grid-template-columns: repeat(7, 1fr);
   grid-column-gap: 10px;
+  place-items: center;
 
-  width: min(350px, 40vw);
+  width: min(85%, 400px);
 
   button {
-    display: grid;
-    place-items: center;
-    
+
+    height: 16px;
+    width: 100%;
     .button-visible {
-      transition: transform 0.25s ease, background .25s ease,
-      box-shadow 0.25s ease;
+      transition: transform 0.25s ease, background 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
     :hover {
@@ -97,12 +98,12 @@ const Pagination = styled((props) => {
     place-items: center;
     background: rgb(78, 97, 154);
     height: 4px;
-    width: 40px;
+    width: 100%;
   }
 `;
 
 const Carousel = styled((props) => {
-  const swiperRef = useRef();
+  const swiperRef = useRef<any>();
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -116,16 +117,23 @@ const Carousel = styled((props) => {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        spaceBetween={80}
+        spaceBetween={40}
         onSwiper={(swiper) => {
           console.log("swiper", swiper.slideTo);
           swiperRef.current = swiper;
           swiper.on("activeIndexChange", () => {
-            setActiveIndex(swiper.activeIndex - 7);
-            console.log(swiper.activeIndex - 7);
+            setActiveIndex(swiper.realIndex);
           });
         }}
         slidesPerView="auto"
+        breakpoints={{
+          600: {
+            spaceBetween: 60,
+          },
+          900: {
+            spaceBetween: 80,
+          },
+        }}
       >
         <SwiperSlide>
           <Avatar src="/mockups/android.jpg" name="Android" />
@@ -149,18 +157,19 @@ const Carousel = styled((props) => {
           <Avatar src="/mockups/technomancer.jpg" name="Technomancer" />
         </SwiperSlide>
       </Swiper>
-      <Pagination
-        swiperRef={swiperRef}
-        numslides={7}
-        sx={{ mx: "auto" }}
-        activeIndex={activeIndex}
-      />
+      <Box className="pagination-wrapper">
+        <Pagination
+          swiperRef={swiperRef}
+          numslides={7}
+          sx={{ mx: "auto" }}
+          activeIndex={activeIndex}
+        />
+      </Box>
     </Box>
   );
 })`
   position: relative;
   overflow: hidden;
-  width: 100%;
 
   .swiper {
     padding-top: 4rem;
@@ -169,6 +178,10 @@ const Carousel = styled((props) => {
 
   .swiper-slide {
     width: fit-content;
+  }
+
+  .pagination-wrapper {
+    width: 100%;
   }
 
   background: linear-gradient(
@@ -231,6 +244,7 @@ const Carousel = styled((props) => {
   ${({ theme }) => theme.breakpoints.down("md")} {
     .avatar {
       .image-wrapper {
+        width: 300px;
       }
       h5 {
         font-size: 1.75rem;
@@ -241,9 +255,10 @@ const Carousel = styled((props) => {
   ${({ theme }) => theme.breakpoints.down("sm")} {
     .avatar {
       .image-wrapper {
+        width: 200px;
       }
       h5 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
       }
     }
   }
@@ -258,24 +273,24 @@ const Avatars = styled((props) => {
           Unique Combinations | 7 Classes | 300+ Traits
         </Typography>
       </Container>
-      <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
-        <Carousel />
-      </Box>
+      <Carousel />
     </Box>
   );
 })`
   padding: 2rem 0 5rem;
   background: #0d0b1c;
 
+
   .container {
   }
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
     h4 {
       font-size: 1rem;
+      margin-bottom: 1.4rem;
     }
     img {
     }

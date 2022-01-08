@@ -113,10 +113,20 @@ const About = styled((props) => {
   .mockups-container {
   }
 
+  ${({ theme }) => theme.breakpoints.down("xl")} {
+    .container {
+      h2 {
+        font-size: 3rem;
+      }
+      p {
+      }
+    }
+  }
+
   ${({ theme }) => theme.breakpoints.down("lg")} {
     .container {
       h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
       p {
       }

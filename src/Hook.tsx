@@ -14,7 +14,7 @@ const Background = styled((props) => {
   );
 })`
   position: fixed;
-  z-index: -1;
+  z-index: -2;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -70,21 +70,17 @@ const Hook = styled((props) => {
   }
   ${({ theme }) => theme.breakpoints.down("md")} {
     h1 {
-      font-size: 2.7rem;
+      font-size: 2.4rem;
     }
   }
   ${({ theme }) => theme.breakpoints.down("sm")} {
     height: 500px;
-    .contents {
+
       h1 {
-        font-size: 1.8rem;
+        margin-top: 2rem;
+        font-size: 1.4rem;
       }
-    }
-  }
-  ${({ theme }) => theme.breakpoints.down("sx")} {
-    h1 {
-      font-size: 1.3rem;
-    }
+    
   }
 `;
 

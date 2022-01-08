@@ -175,6 +175,25 @@ const Roadmap = styled((props) => {
   );
 })`
   position: relative;
+
+  ${({theme}) => theme.breakpoints.down("lg")} {
+    h2 {
+      font-size: 3rem;
+    }
+    h4 {
+      font-size: 1.3rem;
+    }
+  }
+
+  ${({theme}) => theme.breakpoints.down("sm")} {
+    h2 {
+      font-size: 2.5rem;
+    }
+    h4 {
+      font-size: 1.15rem;
+    }
+  }
+
 `;
 
 export default Roadmap;

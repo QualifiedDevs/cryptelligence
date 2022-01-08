@@ -29,9 +29,9 @@ const MainMenu = styled((props) => {
   return (
     <Box component="nav" {...props}>
       <ul>
-        <MenuItem href="/#about">About</MenuItem>
-        <MenuItem href="/#avatars">Avatars</MenuItem>
-        <MenuItem href="/#roadmap">Roadmap</MenuItem>
+        <MenuItem href="/#about">about</MenuItem>
+        <MenuItem href="/#avatars">avatars</MenuItem>
+        <MenuItem href="/#roadmap">roadmap</MenuItem>
       </ul>
     </Box>
   );
