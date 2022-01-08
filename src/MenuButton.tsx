@@ -60,21 +60,21 @@ const TempMenu = styled((props) => {
           <ListItem disablePadding>
             <Link href="/#about" underline="none" color="secondary">
               <ListItemButton onClick={props.closeMenu}>
-                <ListItemText>about</ListItemText>
+                <ListItemText>About</ListItemText>
               </ListItemButton>
             </Link>
           </ListItem>
           <ListItem disablePadding>
             <Link href="/#avatars" underline="none" color="secondary">
               <ListItemButton onClick={props.closeMenu}>
-                <ListItemText>avatars</ListItemText>
+                <ListItemText>Avatars</ListItemText>
               </ListItemButton>
             </Link>
           </ListItem>
           <ListItem disablePadding>
             <Link href="/#roadmap" underline="none" color="secondary">
               <ListItemButton onClick={props.closeMenu}>
-                <ListItemText>roadmap</ListItemText>
+                <ListItemText>Roadmap</ListItemText>
               </ListItemButton>
             </Link>
           </ListItem>
