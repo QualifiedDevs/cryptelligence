@@ -31,7 +31,7 @@ const MainMenu = styled((props) => {
       <ul>
         <MenuItem href="/#about">ABOUT</MenuItem>
         <MenuItem href="/#avatars">AVATARS</MenuItem>
-        <MenuItem href="/#roadmap">ROADMAO</MenuItem>
+        <MenuItem href="/#roadmap">ROADMAP</MenuItem>
       </ul>
     </Box>
   );
