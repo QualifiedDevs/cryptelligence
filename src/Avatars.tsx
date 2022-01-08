@@ -36,6 +36,8 @@ const Avatar = styled((props) => {
 `;
 
 const Pagination = styled((props) => {
+
+  //@ts-ignore
   const Bullet = (props) => {
     return (
       <ButtonBase disableRipple {...props}>
