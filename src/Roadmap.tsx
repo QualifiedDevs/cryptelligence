@@ -4,29 +4,40 @@ import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
 import bg from "../public/backgrounds/roadmap.jpg";
 
-import RoadmapItemBackground from "./vector-images/RoadmapItemBackground"
+import RoadmapItemBackground from "./vector-images/RoadmapItemBackground";
 
 import RoadmapLine from "./vector-images/RoadmapLine";
 
 const Background = styled((props) => {
   return (
     <Box {...props}>
-      <Image src={bg} layout="fill" objectFit="cover" objectPosition="center" />
+      {/* <Image src={bg} layout="fill" objectFit="cover" objectPosition="center" /> */}
     </Box>
   );
 })`
   background: ${({ theme }) => theme.palette.background.default};
   position: absolute;
-  z-index: -1;
+  bottom: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+
+`;
+
+const BackgroundPreload = styled((props) => {
+  return <Box {...props} />;
+})`
+background: ${({ theme }) => theme.palette.background.default};
+position: absolute;
+width: 100%;
+height: 100%;
+z-index: -2;
+top: 0;
 `;
 
 const Item = styled((props) => {
   return (
     <Box {...props} className={`${props.className} item`}>
-      <RoadmapItemBackground className="bg"/>
+      <RoadmapItemBackground className="bg" />
       <Typography variant="h5" component="h4" sx={{ mb: 2 }}>
         {props.milestone}
       </Typography>
@@ -36,12 +47,13 @@ const Item = styled((props) => {
 })`
   position: relative;
   padding: 1.5em;
+  z-index: 1;
 
   .bg {
+    z-index: -1;
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: -1;
     top: 0;
     left: 0;
   }
@@ -66,24 +78,22 @@ const RoadmapContent = styled((props) => {
     return (
       <Box key={index + 1} className="stage-wrapper">
         <Typography variant="h6" className="stage-label">
-          Stage {index + 1}
+          Stage<br />{`0${index + 1}`}
         </Typography>
         {item}
       </Box>
     );
   });
-  return (
-    <Box {...props}>
-      {items}
-    </Box>
-  );
+  return <Box {...props}>{items}</Box>;
 })`
   .stage-wrapper {
     position: relative;
     display: flex;
 
     .stage-label {
+      width: fit-content;
       margin-top: 1em;
+      text-align: right;
       white-space: nowrap;
       margin-right: 0.8em;
       transition: text-shadow 0.2s ease, color 0.2s ease;
@@ -95,7 +105,6 @@ const RoadmapContent = styled((props) => {
       margin-bottom: 2em;
       transition: transform 0.25s;
       .bg {
-
       }
     }
 
@@ -107,7 +116,6 @@ const RoadmapContent = styled((props) => {
       .item {
         transform: translate(2%);
         .bg {
-
         }
       }
     }
@@ -116,6 +124,7 @@ const RoadmapContent = styled((props) => {
       flex-direction: column;
       .stage-label {
         margin-bottom: 1rem;
+        text-align: left;
       }
     }
   }
@@ -125,58 +134,58 @@ const Roadmap = styled((props) => {
   return (
     <Box {...props} sx={{ pb: 8 }}>
       <Background />
+
       <Container sx={{ pt: 8 }} {...props}>
         <Typography variant="h2">Roadmap</Typography>
         <Typography variant="h4">Further Augmentations</Typography>
-          <RoadmapContent sx={{ mt: 15 }}>
-            <Item milestone="Main Launch">
-              <Typography>
-                10K collection release. Cryptoborgs form a society.
-                Cryptelligence begins and we'll start here.
-              </Typography>
-            </Item>
-            <Item milestone="Expansions">
-              <Typography>
-                Cryptoborgs have gone too far playing with augmentations. The
-                Unhumans is the first expansion.
-              </Typography>
-              <Typography>
-                Every Cryptoborg needs a pet companion. A limited expansion in
-                the growing Cryptelligence universe.
-              </Typography>
-            </Item>
-            <Item milestone="Partnerships & Merch">
-              <Typography>
-                We have exciting plans create unique partnerships with
-                likeminded brands and artists.
-              </Typography>
-              <Typography>
-                Cryptelligence appears in the physical world. Why not wear it on
-                your back?
-              </Typography>
-            </Item>
-            <Item milestone="Metaverse">
-              <Typography>
-                Follow the signs and enter the Cryptelligence club - a virtual
-                world to share with fellow Cryptoborgs.
-              </Typography>
-            </Item>
-            <Item milestone="Entertainment">
-              <Typography>
-                Our vision is to create an immersive experience around the
-                Cryptelligence universe. short films, video games, comic books -
-                all in a dream.
-              </Typography>
-            </Item>
-          </RoadmapContent>
-
+        <RoadmapContent sx={{ mt: 15 }}>
+          <Item milestone="Main Launch">
+            <Typography>
+              10K collection release. Cryptoborgs form a society. Cryptelligence
+              begins and we'll start here.
+            </Typography>
+          </Item>
+          <Item milestone="Expansions">
+            <Typography>
+              Cryptoborgs have gone too far playing with augmentations. The
+              Unhumans is the first expansion.
+            </Typography>
+            <Typography>
+              Every Cryptoborg needs a pet companion. A limited expansion in the
+              growing Cryptelligence universe.
+            </Typography>
+          </Item>
+          <Item milestone="Partnerships & Merch">
+            <Typography>
+              We have exciting plans create unique partnerships with likeminded
+              brands and artists.
+            </Typography>
+            <Typography>
+              Cryptelligence appears in the physical world. Why not wear it on
+              your back?
+            </Typography>
+          </Item>
+          <Item milestone="Metaverse">
+            <Typography>
+              Follow the signs and enter the Cryptelligence club - a virtual
+              world to share with fellow Cryptoborgs.
+            </Typography>
+          </Item>
+          <Item milestone="Entertainment">
+            <Typography>
+              Our vision is to create an immersive experience around the
+              Cryptelligence universe. short films, video games, comic books -
+              all in a dream.
+            </Typography>
+          </Item>
+        </RoadmapContent>
       </Container>
     </Box>
   );
 })`
   position: relative;
 
-  ${({theme}) => theme.breakpoints.down("lg")} {
+  ${({ theme }) => theme.breakpoints.down("lg")} {
     h2 {
       font-size: 3rem;
     }
@@ -185,7 +194,7 @@ const Roadmap = styled((props) => {
     }
   }
 
-  ${({theme}) => theme.breakpoints.down("sm")} {
+  ${({ theme }) => theme.breakpoints.down("sm")} {
     h2 {
       font-size: 2.5rem;
     }
@@ -193,7 +202,6 @@ const Roadmap = styled((props) => {
       font-size: 1.15rem;
     }
   }
-
 `;
 
 export default Roadmap;
