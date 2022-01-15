@@ -28,7 +28,6 @@ const Avatar = styled((props) => {
     aspect-ratio: 1;
     width: 400px;
   }
-
   h5 {
     color: ${({ theme }) => theme.palette.text.secondary};
     font-size: 2rem;
@@ -36,7 +35,6 @@ const Avatar = styled((props) => {
 `;
 
 const Pagination = styled((props) => {
-
   //@ts-ignore
   const Bullet = (props) => {
     return (
@@ -68,25 +66,20 @@ const Pagination = styled((props) => {
   grid-template-columns: repeat(7, 1fr);
   grid-column-gap: 10px;
   place-items: center;
-
-  width: min(85%, 400px);
-
+  width: clamp(250px, 60%, 400px);
   button {
-
     height: 16px;
     width: 100%;
     .button-visible {
       transition: transform 0.25s ease, background 0.25s ease,
         box-shadow 0.25s ease;
     }
-
     :hover {
       .button-visible {
         background: rgb(85, 131, 192);
       }
     }
   }
-
   button.active {
     .button-visible {
       transform: scale(1, 1.25);
@@ -94,7 +87,6 @@ const Pagination = styled((props) => {
       box-shadow: 0px 0px 6px rgba(151, 255, 255, 100%);
     }
   }
-
   .button-visible {
     display: grid;
     place-items: center;
@@ -172,20 +164,16 @@ const Carousel = styled((props) => {
 })`
   position: relative;
   overflow: hidden;
-
   .swiper {
     padding-top: 4rem;
     margin-bottom: 2.5rem;
   }
-
   .swiper-slide {
     width: fit-content;
   }
-
   .pagination-wrapper {
     width: 100%;
   }
-
   background: linear-gradient(
     90deg,
     rgba(13, 11, 28, 1) 0%,
@@ -193,7 +181,6 @@ const Carousel = styled((props) => {
     rgba(13, 11, 28, 0) 80%,
     rgba(13, 11, 28, 1) 100%
   );
-
   .swiper-slide {
     .avatar {
       .image-wrapper {
@@ -205,14 +192,12 @@ const Carousel = styled((props) => {
       }
     }
   }
-
   .swiper-slide-prev,
   .swiper-slide-next {
     h5 {
       opacity: 50% !important;
     }
   }
-
   .swiper-slide-active {
     .avatar {
       .image-wrapper {
@@ -224,7 +209,6 @@ const Carousel = styled((props) => {
       }
     }
   }
-
   .overlay {
     z-index: 2;
     width: 100%;
@@ -239,10 +223,8 @@ const Carousel = styled((props) => {
       rgba(13, 11, 28, 1) 100%
     );
   }
-
   ${({ theme }) => theme.breakpoints.down("lg")} {
   }
-
   ${({ theme }) => theme.breakpoints.down("md")} {
     .avatar {
       .image-wrapper {
@@ -253,7 +235,6 @@ const Carousel = styled((props) => {
       }
     }
   }
-
   ${({ theme }) => theme.breakpoints.down("sm")} {
     .avatar {
       .image-wrapper {
@@ -281,11 +262,8 @@ const Avatars = styled((props) => {
 })`
   padding: 2rem 0 5rem;
   background: #0d0b1c;
-
-
   .container {
   }
-
   ${({ theme }) => theme.breakpoints.down("md")} {
     h2 {
       font-size: 2.5rem;

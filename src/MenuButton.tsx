@@ -15,6 +15,7 @@ import {
 import Link from "./Link";
 
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 const DiscordIcon = styled((props) => {
   return (
@@ -80,12 +81,17 @@ const TempMenu = styled((props) => {
           </ListItem>
         </List>
         <Divider />
-        <Box className="socials">
-          <IconButton color="secondary">
-            <DiscordIcon />
-          </IconButton>
-          <IconButton color="secondary">
-            <TwitterIcon />
+        <Box className="footer">
+          <Box className="socials">
+            <IconButton component="a" href="" color="secondary">
+              <DiscordIcon />
+            </IconButton>
+            <IconButton component="a" href="" color="secondary">
+              <TwitterIcon />
+            </IconButton>
+          </Box>
+          <IconButton color="secondary" onClick={props.closeMenu}>
+            <CloseIcon />
           </IconButton>
         </Box>
       </Box>
@@ -105,11 +111,16 @@ const TempMenu = styled((props) => {
     hr {
       background: #181818;
     }
-    .socials {
+    .footer {
+      display: flex;
+      justify-content: space-between;
       margin: 0.2em 0;
       padding: 0 0.5em;
-      button {
-        margin: 0 0.05em;
+      .socials {
+        a {
+          width: fit-content;
+          margin: 0 0.05em;
+        }
       }
     }
   }

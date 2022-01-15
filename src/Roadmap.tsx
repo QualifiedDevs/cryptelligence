@@ -6,12 +6,10 @@ import bg from "../public/backgrounds/roadmap.jpg";
 
 import RoadmapItemBackground from "./vector-images/RoadmapItemBackground";
 
-import RoadmapLine from "./vector-images/RoadmapLine";
-
 const Background = styled((props) => {
   return (
     <Box {...props}>
-      {/* <Image src={bg} layout="fill" objectFit="cover" objectPosition="center" /> */}
+      <Image src={bg} layout="fill" objectFit="cover" objectPosition="center" />
     </Box>
   );
 })`
@@ -20,18 +18,6 @@ const Background = styled((props) => {
   bottom: 0;
   width: 100%;
   height: 100%;
-
-`;
-
-const BackgroundPreload = styled((props) => {
-  return <Box {...props} />;
-})`
-background: ${({ theme }) => theme.palette.background.default};
-position: absolute;
-width: 100%;
-height: 100%;
-z-index: -2;
-top: 0;
 `;
 
 const Item = styled((props) => {
@@ -47,6 +33,7 @@ const Item = styled((props) => {
 })`
   position: relative;
   padding: 1.5em;
+  padding-left: 3.5em;
   z-index: 1;
 
   .bg {
@@ -58,11 +45,12 @@ const Item = styled((props) => {
     left: 0;
   }
 
+  h4 {
+    color: white;
+    font-weight: 400;
+  }
+
   p {
-    margin-left: 2em;
-    &::before {
-      content: "-";
-    }
     margin-bottom: 0.2em;
     :last-of-type {
       margin-bottom: 0em;
@@ -78,7 +66,9 @@ const RoadmapContent = styled((props) => {
     return (
       <Box key={index + 1} className="stage-wrapper">
         <Typography variant="h6" className="stage-label">
-          Stage<br />{`0${index + 1}`}
+          <span className={`checkbox ${index == 0 && "checked"}`} />
+          Stage
+          <br /> {`0${index + 1}`}
         </Typography>
         {item}
       </Box>
@@ -96,12 +86,26 @@ const RoadmapContent = styled((props) => {
       text-align: right;
       white-space: nowrap;
       margin-right: 0.8em;
+      color: ${({ theme }) => theme.palette.primary.main};
       transition: text-shadow 0.2s ease, color 0.2s ease;
+
+      .checkbox {
+        display: inline-block;
+        width: 0.9em;
+        height: 0.9em;
+        margin-right: 0.5em;
+        background: #b8b8b8;
+      }
+
+      .checkbox.checked {
+        background: ${({ theme }) => theme.palette.primary.main};
+        box-shadow: 0px 0px 12px rgba(151, 255, 255, 100%);
+      }
     }
 
     .item {
       width: 100%;
-      min-height: 150px;
+      min-height: 170px;
       margin-bottom: 2em;
       transition: transform 0.25s;
       .bg {
@@ -124,7 +128,9 @@ const RoadmapContent = styled((props) => {
       flex-direction: column;
       .stage-label {
         margin-bottom: 1rem;
-        text-align: left;
+        br {
+          display: none;
+        }
       }
     }
   }
@@ -142,40 +148,39 @@ const Roadmap = styled((props) => {
           <Item milestone="Main Launch">
             <Typography>
               10K collection release. Cryptoborgs form a society. Cryptelligence
-              begins and we'll start here.
+              begins...
             </Typography>
           </Item>
           <Item milestone="Expansions">
             <Typography>
-              Cryptoborgs have gone too far playing with augmentations. The
-              Unhumans is the first expansion.
-            </Typography>
-            <Typography>
-              Every Cryptoborg needs a pet companion. A limited expansion in the
-              growing Cryptelligence universe.
+              Cryptoborgs have gone too far playing with augmentations.
+              <br />
+              “The Unhumans” is the first expansion.
             </Typography>
           </Item>
           <Item milestone="Partnerships & Merch">
             <Typography>
-              We have exciting plans create unique partnerships with likeminded
-              brands and artists.
-            </Typography>
-            <Typography>
-              Cryptelligence appears in the physical world. Why not wear it on
-              your back?
+              We have exciting plans to create unique partnerships with
+              likeminded brands and artists.
+              <br />
+              Cryptelligence appears in the physical world. Join us for
+              real-world community events.
             </Typography>
           </Item>
           <Item milestone="Metaverse">
             <Typography>
-              Follow the signs and enter the Cryptelligence club - a virtual
+              Follow the signs and enter the Cryptelligence Club - a virtual
               world to share with fellow Cryptoborgs.
+              <br />
+              Acquisition of land in virtual worlds such The Sandbox, and
+              partnerships with play-to-earn games.
             </Typography>
           </Item>
           <Item milestone="Entertainment">
             <Typography>
               Our vision is to create an immersive experience around the
-              Cryptelligence universe. short films, video games, comic books -
-              all in a dream.
+              Cryptelligence universe, including short films, comic books and
+              video games.
             </Typography>
           </Item>
         </RoadmapContent>

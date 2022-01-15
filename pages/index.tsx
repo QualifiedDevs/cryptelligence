@@ -5,6 +5,7 @@ import Hook from "../src/Hook";
 import About from "../src/About";
 import Avatars from "../src/Avatars";
 import Roadmap from "../src/Roadmap";
+import Footer from "../src/Footer";
 
 const index = styled((props) => {
   return (
@@ -13,6 +14,7 @@ const index = styled((props) => {
       <About id="about" />
       <Avatars id="avatars"/>
       <Roadmap id="roadmap" />
+      <Footer />
     </Box>
   );
 })`
