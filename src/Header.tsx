@@ -6,40 +6,12 @@ import MainMenu from "./MainMenu";
 import SocialsMenu from "./SocialsMenu";
 import MenuButton from "./MenuButton"
 
-const BannerLogo = styled((props) => {
-  return (
-    <Box {...props}>
-      <Logo className="logo" />
-      <Typography variant="h5">
-        <b>Cryptelligence</b>
-        <br />
-        Society
-      </Typography>
-    </Box>
-  );
-})`
-  display: flex;
-  align-items: flex-start;
-  font-size: 1.25rem;
-  .logo {
-    width: 2em;
-    margin-right: 1em;
-    height: 100%;
-  }
-  h5 {
-    color: white;
-    font-size: inherit;
-    b {
-      letter-spacing: .15em;
-      font-weight: 300;
-    }
-  }
-`;
+import {LogoBanner} from "./Branding"
 
 const Header = styled((props) => {
   return (
     <Box component="header" {...props}>
-      <BannerLogo className="banner-logo" />
+      <LogoBanner className="logo" />
       <MainMenu className="menu" />
       <Box className="wrapper-right">
         <Button>Coming Soon</Button>
@@ -79,10 +51,6 @@ const Header = styled((props) => {
     grid-template-columns: 1fr 1fr;
     height: 180px;
 
-    .banner-logo {
-      font-size: 1rem;
-    }
-
     .wrapper-right {
     }
 
@@ -105,6 +73,10 @@ const Header = styled((props) => {
       button {
         display: none;
       }
+    }
+
+    .logo {
+      width: 300px;
     }
 
     .menu {

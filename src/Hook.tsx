@@ -6,6 +6,8 @@ import bg from "../public/backgrounds/hook.jpg";
 
 import Header from "../src/Header";
 
+import { LogoText } from "./Branding";
+
 const Background = styled((props) => {
   return (
     <Box {...props}>
@@ -33,11 +35,7 @@ const Hook = styled((props) => {
       <Header />
       <Background />
       <Box className="contents">
-        <Typography variant="h1" sx={{ mt: 2 }}>
-          <b>Cryptelligence</b>
-          <br />
-          Society
-        </Typography>
+        <LogoText className="logo"/>
       </Box>
     </Box>
   );
@@ -56,32 +54,14 @@ const Hook = styled((props) => {
       rgba(6, 3, 9, 1) 100%
     );
 
-    h1 {
-      text-align: center;
-      b {
-        font-weight: 300;
-        letter-spacing: 0.15em;
-      }
+    .logo {
+      margin: auto;
+      margin-top: 1rem;
     }
   }
 
-  ${({ theme }) => theme.breakpoints.down("lg")} {
-    h1 {
-      font-size: 3.6rem;
-    }
-  }
-  ${({ theme }) => theme.breakpoints.down("md")} {
-    h1 {
-      font-size: 2.4rem;
-    }
-  }
   ${({ theme }) => theme.breakpoints.down("sm")} {
     height: 500px;
-
-    h1 {
-      margin-top: 2rem;
-      font-size: 1.4rem;
-    }
   }
 `;
 
