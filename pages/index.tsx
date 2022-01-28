@@ -5,6 +5,7 @@ import Hook from "../src/Hook";
 import About from "../src/About";
 import Avatars from "../src/Avatars";
 import Roadmap from "../src/Roadmap";
+import Traits from "../src/Traits";
 import Footer from "../src/Footer";
 
 const index = styled((props) => {
@@ -12,8 +13,9 @@ const index = styled((props) => {
     <Box {...props}>
       <Hook />
       <About id="about" />
-      <Avatars id="avatars"/>
+      <Avatars id="avatars" />
       <Roadmap id="roadmap" />
+      <Traits />
       <Footer />
     </Box>
   );
@@ -22,3 +24,10 @@ const index = styled((props) => {
 `;
 
 export default index;
+
+import getTraitPaths from "@src/getTraitPaths"
+
+export async function getStaticProps() {
+
+  return {props: {}}
+}

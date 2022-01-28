@@ -27,8 +27,8 @@ const RoadmapItemBackground = styled((props) => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#16171E" />
-          <stop offset="0.959031" stop-opacity="0" />
-          <stop offset="0.984375" stop-opacity="0" />
+          <stop offset="0.959031" stopOpacity="0" />
+          <stop offset="0.984375" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_33_1815"
