@@ -10,6 +10,8 @@ import Avatars from "../src/Avatars";
 import Roadmap from "../src/Roadmap";
 import Traits from "../src/Traits";
 import Footer from "../src/Footer";
+import FAQ from "@src/FAQ"
+import Team from "@src/Team"
 
 const index = styled(({traits, ...props}) => {
   return (
@@ -19,6 +21,8 @@ const index = styled(({traits, ...props}) => {
       <Avatars id="avatars" />
       <Roadmap id="roadmap" />
       <Traits traits={traits}/>
+      <Team />
+      <FAQ />
       <Footer />
     </Box>
   );

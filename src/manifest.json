@@ -1,0 +1,28 @@
+{
+  "team": {
+    "Winny": {
+      "name": "Member 1",
+      "role": "Founder",
+      "avatar": "member1.jpg",
+      "socials": {
+        "twitter": "https://twitter.com/"
+      }
+    },
+    "Dodoh": {
+      "name": "Member 2",
+      "role": "Artist",
+      "avatar": "member2.jpg",
+      "socials": {
+        "twitter": "https://twitter.com/"
+      }
+    },
+    "Sara": {
+      "name": "Member 3",
+      "role": "Community Manager",
+      "avatar": "member3.jpg",
+      "socials": {
+        "twitter": "https://twitter.com/"
+      }
+    }
+  }
+}

@@ -31,10 +31,10 @@ const FAQItem = styled(({ summary, children, ...props }) => {
     </Accordion>
   );
 })`
-  background: ${({ theme }) => theme.palette.secondary.main};
+  background: #333333;
 
   svg {
-      fill: white;
+    fill: white;
   }
 
   border-radius: 12px !important;
@@ -49,7 +49,7 @@ const FAQItem = styled(({ summary, children, ...props }) => {
   p {
     font-size: 1rem;
     b {
-        text-transform: uppercase;
+      text-transform: uppercase;
     }
     span {
       margin: 0.5em 0 1em;
@@ -68,95 +68,52 @@ const FAQ = styled((props) => {
 
   return (
     <Box {...props}>
-      <Container maxWidth="md" >
+      <Container maxWidth="md">
         <Typography variant="h3" className="heading">
           FAQ
         </Typography>
         <Box component="ul">
           <FAQItem
-            summary={"How Many Anatomy Apes Are There in Total?"}
+            summary={"Question 1"}
             expanded={expanded === "panel1"}
             onChange={handleChange("panel1")}
           >
-            A total of 8,000 Anatomy Apes are available, with the combination of
-            around 130+ traits across the collection.
+            Description
           </FAQItem>
           <FAQItem
-            summary={"How Much is Mint?"}
+            summary={"Question 2"}
             expanded={expanded === "panel2"}
             onChange={handleChange("panel2")}
           >
-            First 800 apes mints are FREE (max. 1 / wallet)! Then the remaining
-            apes will cost 0.039 Ξ. The total amount of mints you can make is 20
-            per wallet (for both FREE / paid mints).
+            Description
           </FAQItem>
           <FAQItem
-            summary={"Any Affiliation With BAYC?"}
+            summary={"Question 3"}
             expanded={expanded === "panel3"}
             onChange={handleChange("panel3")}
           >
-            <span>
-              No, we are not in any way affiliated with BAYC nor MAYC. But we
-              are heavily inspired by them, and wanted to introduce high quality
-              derivative artworks based on it.
-            </span>
-            <br />
-            <span>
-              We deconstructed the traits from BAYC apes and created a
-              completely different & unique combination of ape and added our
-              anatomical element.
-            </span>
+            Description
           </FAQItem>
           <FAQItem
-            summary={"Wen Reveal?"}
+            summary={"Question 4"}
             expanded={expanded === "panel4"}
             onChange={handleChange("panel4")}
           >
-            Minted Anatomy Apes will be revealed immediately.
+            Description
           </FAQItem>
           <FAQItem
-            summary={"Future Roadmap?"}
+            summary={"Question 5"}
             expanded={expanded === "panel5"}
             onChange={handleChange("panel5")}
           >
-            <b>Marketing Strategies</b>
-            <br />
-            <span>
-              Implementing post-marketing strategies to make the Anatomy Science
-              universe well known by engaging a broader audience to help
-              maintain the floor price of the collection.
-            </span>
-            <br />
-            <b>Future Collabs & Giveaways</b>
-            <br />
-            <span>
-              Exclusive future giveaways and collaboration opportunities for
-              Anatomy Ape hodlers.
-            </span>
-            <br />
-            <b>Privilege for Future Collections</b>
-            <br />
-            <span>
-              The essence of the roadmap is to make the Anatomy Science universe
-              bigger, and everyone who takes part in our journey will enjoy the
-              privilege.
-            </span>
-            <br />
-            <b>Community Voice</b>
-            <br />
-            <span>
-              All ASAC holders will have a voice to help shape the future of the
-              Anatomy Science universe!
-            </span>
-            <br />
-            !WAGGA
+            Description
           </FAQItem>
         </Box>
       </Container>
     </Box>
   );
 })`
-  background: ${({ theme }) => theme.palette.secondary.dark};
+  background: black;
   padding: 4rem 0;
   width: 100%;
 
