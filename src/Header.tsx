@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 import { styled } from "@mui/material/styles";
 import { Container, Box, Button, Typography } from "@mui/material";
 
