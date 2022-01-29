@@ -1,3 +1,6 @@
+//@ts-nocheck
+
+
 import { styled } from "@mui/material/styles";
 import { Box, SvgIcon } from "@mui/material";
 

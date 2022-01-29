@@ -1,3 +1,6 @@
+//@ts-nocheck
+
+
 import { styled } from "@mui/material/styles";
 import { Box } from "@mui/material";
 
@@ -8,14 +11,14 @@ import Roadmap from "../src/Roadmap";
 import Traits from "../src/Traits";
 import Footer from "../src/Footer";
 
-const index = styled((props) => {
+const index = styled(({traits, ...props}) => {
   return (
     <Box {...props}>
       <Hook />
       <About id="about" />
       <Avatars id="avatars" />
       <Roadmap id="roadmap" />
-      <Traits />
+      <Traits traits={traits}/>
       <Footer />
     </Box>
   );
@@ -28,6 +31,5 @@ export default index;
 import getTraitPaths from "@src/getTraitPaths"
 
 export async function getStaticProps() {
-
-  return {props: {}}
+  return {props: {traits: getTraitPaths()}}
 }
