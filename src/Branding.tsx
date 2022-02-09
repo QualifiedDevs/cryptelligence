@@ -10,9 +10,9 @@ const LogoBanner = styled((props) => {
     </Box>
   );
 })`
+width: 400px;
   position: relative;
   aspect-ratio: 8;
-  width: 400px;
 `;
 
 const LogoText = styled((props) => {
@@ -20,7 +20,6 @@ const LogoText = styled((props) => {
       <Image src="/logo-text.svg" layout="fill" objectFit="contain" objectPosition={"center"} />
   </Box>;
 })`
-
 width: 200px;
 position: relative;
 aspect-ratio: 8;

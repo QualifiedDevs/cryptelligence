@@ -1,6 +1,5 @@
 //@ts-nocheck
 
-
 import { styled } from "@mui/material/styles";
 import { Box, Container, Typography } from "@mui/material";
 
@@ -18,7 +17,6 @@ const MockupsGif = styled((props) => {
           layout="responsive"
           objectFit="cover"
           objectPosition="center"
-          
         />
       </Box>
       <img src="/vector-images/gif-decoration.png" className="decorator" />
@@ -67,16 +65,16 @@ const About = styled((props) => {
             </Box>
           </Typography>
           <Typography>
-            Cryptelligence Society is a limited collection of 10101 NFT avatars
-            inspired by cyberpunk, sci-fi and pop culture.
+            Cryptelligence Society is a limited collection of 8686 NFT avatars
+            inspired by cyberpunk, sci-fi and tech innovation.
           </Typography>
           <Typography>
             Each avatar is an entirely unique NFT randomly generated from over
-            300 traits and stored on the Ethereum blockchain.
+            250 traits and stored on the Ethereum blockchain.
           </Typography>
           <Typography>
-            The aim of the collection is to give each owner a truly visually
-            differentiated avatar, while allowing the community to participate
+            The aim of the collection is to give its owners truly visually
+            differentiated avatars, while allowing the community to participate
             in the entertaining universe of Cryptelligence.
           </Typography>
         </Box>
@@ -144,7 +142,7 @@ const About = styled((props) => {
     .container {
       grid-template-columns: 1fr;
       h2 {
-        font-size: 1.8rem;
+        font-size: 1.8rem !important;
         .divider {
           transform: translate(30%);
           bottom: 40px;

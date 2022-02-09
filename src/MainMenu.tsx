@@ -33,14 +33,15 @@ const MainMenu = styled((props) => {
       <ul>
         <MenuItem href="/#about">ABOUT</MenuItem>
         <MenuItem href="/#avatars">AVATARS</MenuItem>
-        <MenuItem href="/#roadmap">ROADMAP</MenuItem>
+        <MenuItem href="#/traits">TRAITS</MenuItem>
         <MenuItem href="/#team">TEAM</MenuItem>
+        <MenuItem href="/#roadmap">ROADMAP</MenuItem>
       </ul>
     </Box>
   );
 })`
   font-family: presicav;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 
   &,
   ul {
