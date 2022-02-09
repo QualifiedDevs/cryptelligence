@@ -29,9 +29,9 @@ const RoadmapItemBackground = styled((props) => {
           y2="149"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#16171E" />
-          <stop offset="0.959031" stopOpacity="0" />
-          <stop offset="0.984375" stopOpacity="0" />
+          <stop stopColor="#1a1a1f" />
+          <stop offset="0.959031" stopOpacity="1" />
+          <stop offset="0.984375" stopOpacity="1" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_33_1815"
@@ -42,7 +42,7 @@ const RoadmapItemBackground = styled((props) => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#97FFFF" />
-          <stop offset="1" stopColor="#97FFFF" stopOpacity="0" />
+          <stop offset="1" stopColor="#97FFFF" stopOpacity="1" />
         </linearGradient>
       </defs>
     </SvgIcon>

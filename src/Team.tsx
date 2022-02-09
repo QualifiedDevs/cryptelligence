@@ -8,12 +8,14 @@ import Image from "next/image"
 import manifest from "@src/manifest.json"
 const teamInfo = manifest.team
 
+import images from "@src/teamImages"
+
 const Avatar = styled(({ src, ...props }) => {
 
     return (
       <Box {...props}>
         <Image
-          src={`/team-avatars/${src}`}
+          src={src}
           layout="fill"
           objectFit="cover"
           objectPosition="center"
@@ -31,7 +33,7 @@ const Avatar = styled(({ src, ...props }) => {
   const Member = styled(({ name, role, avatar, bio, socials, ...props }) => {
     return (
       <Box component="a" href={socials.twitter} {...props}>
-        <Avatar src={avatar} className="avatar" sx={{ mb: 1.5 }} />
+        <Avatar src={images[avatar]} className="avatar" sx={{ mb: 1.5 }} />
         <Typography className="name">{name}</Typography>
         <Typography className="role">{role}</Typography>
       </Box>
@@ -67,7 +69,7 @@ const Avatar = styled(({ src, ...props }) => {
     });
   
     return (
-      <Box {...props}>
+      <Box id="team" {...props}>
         <Typography variant="h3" className="heading" sx={{ mb: 5 }}>
           Meet the Team
         </Typography>
@@ -87,10 +89,12 @@ const Avatar = styled(({ src, ...props }) => {
     .team-members {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, .8fr));
+
       grid-column-gap: 1rem;
       grid-row-gap: 1.5rem;
       justify-content: center;
     }
+
   `;
   
   export default Team;

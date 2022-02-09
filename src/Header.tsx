@@ -3,12 +3,13 @@
 import { styled } from "@mui/material/styles";
 import { Container, Box, Button, Typography } from "@mui/material";
 
-import Logo from "./Logo";
 import MainMenu from "./MainMenu";
 import SocialsMenu from "./SocialsMenu";
-import MenuButton from "./MenuButton"
+import MenuButton from "./MenuButton";
 
-import {LogoBanner} from "./Branding"
+import { LogoBanner } from "./Branding";
+
+import manifest from "@src/manifest.json";
 
 const Header = styled((props) => {
   return (
@@ -17,15 +18,9 @@ const Header = styled((props) => {
       <MainMenu className="menu" />
       <Box className="wrapper-right">
         <Button>Coming Soon</Button>
-        <SocialsMenu
-          className="socials"
-          socials={{
-            discord: "",
-            twitter: "",
-          }}
-        />
+        <SocialsMenu className="socials" socials={manifest.socials} />
       </Box>
-      <MenuButton className="menu-button"/>
+      <MenuButton className="menu-button" />
     </Box>
   );
 })`
@@ -63,13 +58,12 @@ const Header = styled((props) => {
   }
 
   ${({ theme }) => theme.breakpoints.down("sm")} {
-
     height: 100px;
 
     display: flex;
     padding: 2rem 2rem 0 1rem;
     justify-content: space-between;
-    
+
     .wrapper-right {
       display: none;
       button {
@@ -93,8 +87,6 @@ const Header = styled((props) => {
       width: 40px;
       height: 40px;
     }
-    
-
   }
 `;
 

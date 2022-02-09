@@ -1,18 +1,24 @@
 //@ts-nocheck
 
-
 import React, { useState, useEffect, useMemo } from "react";
 import { styled } from "@mui/material/styles";
 import { Box, Container, Typography } from "@mui/material";
 
 import Image from "next/image";
+import traits from "@src/images";
 
 //Manually import and format all traits from another file so they are static
 
 const Trait = styled(({ src, ...props }) => {
   return (
     <Box {...props}>
-      <Image src={src} layout="fill" objectFit="cover" objectPosition="center" priority />
+      <Image
+        src={src}
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+        priority
+      />
     </Box>
   );
 })`
@@ -40,12 +46,11 @@ const TraitPreview = styled(({ name, images, ...props }) => {
   return (
     <Box {...props}>
       <Box
-      onMouseEnter={() => handleTraitMouseover()}
+        onMouseEnter={() => handleTraitMouseover()}
         className="trait-window"
         sx={{ mb: 2 }}
       >
         {traits[activeTrait]}
-              
       </Box>
       <Typography variant="h4">{name}</Typography>
     </Box>
@@ -73,7 +78,7 @@ const TraitPreview = styled(({ name, images, ...props }) => {
   }
 `;
 
-const Traits = styled(({ traits, ...props }) => {
+const Traits = styled(({ ...props }) => {
   const traitPreviews = Object.keys(traits).map((traitName) => (
     <TraitPreview name={traitName} images={traits[traitName]} key={traitName} />
   ));
@@ -81,11 +86,15 @@ const Traits = styled(({ traits, ...props }) => {
   return (
     <Box {...props}>
       <Container maxWidth="lg" sx={{ py: 10, pb: 20 }}>
-        <Typography variant="h2" sx={{mb: 1}}>Traits</Typography>
-        <Typography variant="h4" sx={{mb: 2}}>
+        <Typography variant="h2" sx={{ mb: 1 }}>
+          Traits
+        </Typography>
+        <Typography variant="h4" sx={{ mb: 2 }}>
           Our goal is to create a range of truly unique avatars.
         </Typography>
-        <Typography variant="h4" sx={{mb: 4}}>Navigate for preview.</Typography>
+        <Typography variant="h4" sx={{ mb: 4 }}>
+          Navigate for preview.
+        </Typography>
         <Box className="trait-previews">{traitPreviews}</Box>
       </Container>
     </Box>
@@ -97,7 +106,7 @@ const Traits = styled(({ traits, ...props }) => {
   .MuiContainer-root {
     .trait-previews {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       grid-column-gap: 1rem;
       grid-row-gap: 6rem;
       justify-content: center;
@@ -113,6 +122,14 @@ const Traits = styled(({ traits, ...props }) => {
     }
   }
 
+  ${({theme}) => theme.breakpoints.down("md")} {
+    .MuiContainer-root {
+      .trait-previews {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
   ${({ theme }) => theme.breakpoints.down("sm")} {
     h2 {
       font-size: 2.5rem;
@@ -121,7 +138,6 @@ const Traits = styled(({ traits, ...props }) => {
       font-size: 1.15rem;
     }
   }
-
 `;
 
 export default Traits;

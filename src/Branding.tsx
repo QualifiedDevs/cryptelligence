@@ -21,8 +21,8 @@ const LogoText = styled((props) => {
   </Box>;
 })`
 
+width: 200px;
 position: relative;
-width: min(90%, 1000px);
 aspect-ratio: 8;
 
 `;

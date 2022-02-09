@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 import { Box, Container, Typography } from "@mui/material";
 
 import Image from "next/image";
-import bg from "../public/backgrounds/roadmap.jpg";
+import bg from "../public/backgrounds/roadmap.png";
 
 import RoadmapItemBackground from "./vector-images/RoadmapItemBackground";
 
@@ -20,6 +20,7 @@ const Background = styled((props) => {
   bottom: 0;
   width: 100%;
   height: 100%;
+  
 `;
 
 const Item = styled((props) => {

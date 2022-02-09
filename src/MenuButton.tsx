@@ -82,6 +82,13 @@ const TempMenu = styled((props) => {
               </ListItemButton>
             </Link>
           </ListItem>
+          <ListItem disablePadding>
+            <Link href="/#team" underline="none" color="secondary">
+              <ListItemButton onClick={props.closeMenu}>
+                <ListItemText>TEAM</ListItemText>
+              </ListItemButton>
+            </Link>
+          </ListItem>
         </List>
         <Divider />
         <Box className="footer">

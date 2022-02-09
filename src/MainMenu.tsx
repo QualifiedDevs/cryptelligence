@@ -34,6 +34,7 @@ const MainMenu = styled((props) => {
         <MenuItem href="/#about">ABOUT</MenuItem>
         <MenuItem href="/#avatars">AVATARS</MenuItem>
         <MenuItem href="/#roadmap">ROADMAP</MenuItem>
+        <MenuItem href="/#team">TEAM</MenuItem>
       </ul>
     </Box>
   );

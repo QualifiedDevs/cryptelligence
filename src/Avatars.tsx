@@ -116,7 +116,6 @@ const Carousel = styled((props) => {
         }}
         spaceBetween={40}
         onSwiper={(swiper) => {
-          console.log("swiper", swiper.slideTo);
           swiperRef.current = swiper;
           swiper.on("activeIndexChange", () => {
             setActiveIndex(swiper.realIndex);

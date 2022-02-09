@@ -18,6 +18,7 @@ const MockupsGif = styled((props) => {
           layout="responsive"
           objectFit="cover"
           objectPosition="center"
+          
         />
       </Box>
       <img src="/vector-images/gif-decoration.png" className="decorator" />
@@ -33,6 +34,7 @@ const MockupsGif = styled((props) => {
     padding: 1.5em;
     img {
       clip-path: polygon(0% 90%, 10% 100%, 100% 100%, 100% 10%, 90% 0%, 0% 0%);
+      z-index: 1;
     }
   }
 
@@ -45,8 +47,9 @@ const MockupsGif = styled((props) => {
   .decorator {
     position: absolute;
     top: 50%;
-    right: -96%;
-    width: 100%;
+    left: 94%;
+    width: 150%;
+    aspect-ratio: 480/101;
   }
 `;
 
@@ -97,6 +100,7 @@ const About = styled((props) => {
 
       h2 {
         position: relative;
+        font-size: 3rem;
         margin-bottom: 5rem;
         .divider {
           position: absolute;
