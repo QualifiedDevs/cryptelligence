@@ -132,31 +132,37 @@ const Carousel = styled((props) => {
         }}
       >
         <SwiperSlide>
-          <Avatar src="/mockups/android.jpg" name="Android" />
+          <Avatar src="/slider-images/Android1.png" name="Android" />
         </SwiperSlide>
         <SwiperSlide>
-          <Avatar src="/mockups/cryptoscum.jpg" name="CryptoScum" />
+          <Avatar src="/slider-images/Android2.png" name="Android" />
         </SwiperSlide>
         <SwiperSlide>
-          <Avatar src="/mockups/cyborg.jpg" name="Cyborg" />
+          <Avatar src="/slider-images/Degen.png" name="Degen" />
         </SwiperSlide>
         <SwiperSlide>
-          <Avatar src="/mockups/heist.jpg" name="Bandit" />
+          <Avatar src="/slider-images/Engineer.png" name="Engineer" />
         </SwiperSlide>
         <SwiperSlide>
-          <Avatar src="/mockups/laser.jpg" name="VR Surfer" />
+          <Avatar src="/slider-images/Metasurfer1.png" name="Metasurfer" />
         </SwiperSlide>
         <SwiperSlide>
-          <Avatar src="/mockups/sword.jpg" name="Samurai" />
+          <Avatar src="/slider-images/MetaSurfer2.png" name="Metasurfer" />
         </SwiperSlide>
         <SwiperSlide>
-          <Avatar src="/mockups/technomancer.jpg" name="Technomancer" />
+          <Avatar src="/slider-images/Cryptooriginal.png" name="Cryptooriginal" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Avatar src="/slider-images/Untitled_Artwork.png" name="Coming soon..." />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Avatar src="/slider-images/Untitled_Artwork.png" name="Coming soon..." />
         </SwiperSlide>
       </Swiper>
       <Box className="pagination-wrapper">
         <Pagination
           swiperRef={swiperRef}
-          numslides={7}
+          numslides={9}
           sx={{ mx: "auto" }}
           activeIndex={activeIndex}
         />

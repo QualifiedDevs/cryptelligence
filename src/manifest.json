@@ -1,7 +1,7 @@
 {
   "socials": {
-    "discord": "/",
-    "twitter": "/"
+    "discord": "https://discord.gg/s4yGpfk3",
+    "twitter": "https://twitter.com/cryptelligence_"
   },
   "team": {
     "Member1": {
@@ -9,7 +9,7 @@
       "role": "Founder",
       "avatar": "member1",
       "socials": {
-        "twitter": "https://twitter.com/"
+        "twitter": "https://twitter.com/cryptelligence_"
       }
     },
     "Member2": {
@@ -17,7 +17,7 @@
       "role": "Artist",
       "avatar": "member2",
       "socials": {
-        "twitter": "https://twitter.com/"
+        "twitter": "https://twitter.com/cryptelligence_"
       }
     },
     "Sara": {
@@ -25,7 +25,7 @@
       "role": "Community Manager",
       "avatar": "member3",
       "socials": {
-        "twitter": "https://twitter.com/"
+        "twitter": "https://twitter.com/cryptelligence_"
       }
     }
   }
