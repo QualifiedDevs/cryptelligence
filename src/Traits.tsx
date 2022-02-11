@@ -14,7 +14,7 @@ const Trait = styled(({ src, ...props }) => {
     <Box {...props}>
       <Image
         src={src}
-        layout="fill"
+        layout="responsive"
         objectFit="cover"
         objectPosition="center"
         priority

@@ -28,7 +28,7 @@ const Avatar = styled((props) => {
 })`
   .image-wrapper {
     position: relative;
-    aspect-ratio: 1;
+    height: 400px;
     width: 400px;
   }
   h5 {
