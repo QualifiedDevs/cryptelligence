@@ -4,8 +4,8 @@ import ComingSoon from "@public/slider-images/ComingSoon.png";
 import Cryptooriginal from "@public/slider-images/Cryptooriginal.png";
 import Degen from "@public/slider-images/Degen.png";
 import Engineer from "@public/slider-images/Engineer.png";
-import Metasurfer1 from "@public/slider-images/Metasurfer1.png";
-import Metasurfer2 from "@public/slider-images/Metasurfer2.png";
+import MetaSurfer1 from "@public/slider-images/MetaSurfer1.png";
+import MetaSurfer2 from "@public/slider-images/Metasurfer2.png";
 
 export default {
   Android1,
@@ -14,6 +14,6 @@ export default {
   Cryptooriginal,
   Degen,
   Engineer,
-  Metasurfer1,
-  Metasurfer2,
+  MetaSurfer1,
+  MetaSurfer2,
 };
