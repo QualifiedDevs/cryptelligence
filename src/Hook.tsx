@@ -52,26 +52,24 @@ const DiscordButton = styled((props) => {
           strokeWidth="2"
         />
       </SvgIcon>
-      <Typography>Join Our Discord</Typography>
+      <Typography>Join Our<br />Discord</Typography>
     </Box>
   );
 })`
 
   position: relative;
-  width: 200px;
   display: grid;
   place-items: center;
   color: white;
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
+  padding: .5em 2em;
 
   p {
     z-index: 1;
   }
 
-  aspect-ratio: 676/255;
-  
   * {
     font-size: 1.25em !important;
     font-weight: bold !important;

@@ -1,7 +1,6 @@
 //@ts-nocheck
 
-
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useMemo } from "react";
 import { styled } from "@mui/material/styles";
 import {
   Box,
@@ -15,21 +14,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import Image from "next/image";
+import sliderImages from "@src/sliderImages";
 
 const Avatar = styled((props) => {
   return (
-    <Box {...props} className={`${props.className} avatar`}>
-      <Box sx={{ mb: 6 }} className="image-wrapper">
-        <Image src={props.src} layout="fill" objectFit="contain" />
+      <Box {...props} className={`${props.className} avatar`}>
+        <Box sx={{ mb: 6 }} className="image-wrapper">
+          <Image src={props.src} layout="responsive" objectFit="contain" />
+        </Box>
+        <Typography variant="h5">{props.name}</Typography>
       </Box>
-      <Typography variant="h5">{props.name}</Typography>
-    </Box>
   );
 })`
   .image-wrapper {
     position: relative;
-    height: 400px;
     width: 400px;
+
   }
   h5 {
     color: ${({ theme }) => theme.palette.text.secondary};
@@ -103,6 +103,14 @@ const Carousel = styled((props) => {
   const swiperRef = useRef<any>();
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const slides = useMemo(() => {
+    return Object.keys(sliderImages).map((name) => {
+      return <SwiperSlide>
+        <Avatar name={name} src={sliderImages[name]} />
+      </SwiperSlide>
+    })
+  })
+
   return (
     <Box {...props} className={`${props.className} carousel`}>
       {/* <div className="overlay" /> */}
@@ -131,38 +139,12 @@ const Carousel = styled((props) => {
           },
         }}
       >
-        <SwiperSlide>
-          <Avatar src="/slider-images/Android1.png" name="Android" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Avatar src="/slider-images/Android2.png" name="Android" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Avatar src="/slider-images/Degen.png" name="Degen" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Avatar src="/slider-images/Engineer.png" name="Engineer" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Avatar src="/slider-images/Metasurfer1.png" name="Metasurfer" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Avatar src="/slider-images/MetaSurfer2.png" name="Metasurfer" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Avatar src="/slider-images/Cryptooriginal.png" name="Cryptooriginal" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Avatar src="/slider-images/Untitled_Artwork.png" name="Coming soon..." />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Avatar src="/slider-images/Untitled_Artwork.png" name="Coming soon..." />
-        </SwiperSlide>
+        {slides}
       </Swiper>
       <Box className="pagination-wrapper">
         <Pagination
           swiperRef={swiperRef}
-          numslides={9}
+          numslides={7}
           sx={{ mx: "auto" }}
           activeIndex={activeIndex}
         />

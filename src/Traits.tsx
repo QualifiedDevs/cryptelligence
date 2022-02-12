@@ -39,7 +39,6 @@ const TraitPreview = styled(({ name, images, ...props }) => {
   }, [images]);
 
   const handleTraitMouseover = () => {
-    console.log("swapping");
     setActiveTrait((activeTrait + 1) % images.length);
   };
 

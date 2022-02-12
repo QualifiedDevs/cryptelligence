@@ -44,6 +44,10 @@ const Header = styled((props) => {
     display: none;
   }
 
+  .logo {
+    width: max(60%, 250px);
+  }
+
   ${({ theme }) => theme.breakpoints.down("lg")} {
     grid-template-columns: 1fr 1fr;
     height: 180px;
@@ -69,10 +73,6 @@ const Header = styled((props) => {
       button {
         display: none;
       }
-    }
-
-    .logo {
-      width: 300px;
     }
 
     .menu {

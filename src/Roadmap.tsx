@@ -1,5 +1,7 @@
 //@ts-nocheck
 
+import React, { useState, useEffect } from "react";
+
 import { styled } from "@mui/material/styles";
 import { Box, Container, Typography } from "@mui/material";
 
@@ -8,7 +10,7 @@ import bg from "../public/backgrounds/Roadmap2.jpg";
 
 import RoadmapItemBackground from "./vector-images/RoadmapItemBackground";
 
-const Background = styled((props) => {
+const Background = styled(({ visible, ...props }: any) => {
   return (
     <Box {...props}>
       <Image src={bg} layout="fill" objectFit="cover" objectPosition="center" />
@@ -16,11 +18,12 @@ const Background = styled((props) => {
   );
 })`
   background: ${({ theme }) => theme.palette.background.default};
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 100%;
-  
+  z-index: -1;
+  display: ${({ visible }) => (visible ? "block" : "none")};
 `;
 
 const Item = styled((props) => {
@@ -140,9 +143,21 @@ const RoadmapContent = styled((props) => {
 `;
 
 const Roadmap = styled((props) => {
+  const [bgVisible, setBgVisible] = useState(false);
+
+  useEffect(() => {
+    window.onscroll = () => {
+      if (!bgVisible && window.pageYOffset > window.innerHeight * 2)
+        return setBgVisible(true);
+      setBgVisible(false);
+    };
+
+    return () => (window.onscroll = undefined);
+  }, []);
+
   return (
     <Box {...props} sx={{ pb: 8 }}>
-      <Background />
+      <Background visible={bgVisible} />
 
       <Container sx={{ pt: 8 }} {...props}>
         <Typography variant="h2">Roadmap</Typography>
