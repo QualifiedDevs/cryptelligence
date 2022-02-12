@@ -5,7 +5,7 @@ import Cryptooriginal from "@public/slider-images/Cryptooriginal.png";
 import Degen from "@public/slider-images/Degen.png";
 import Engineer from "@public/slider-images/Engineer.png";
 import MetaSurfer1 from "@public/slider-images/MetaSurfer1.png";
-import MetaSurfer2 from "@public/slider-images/Metasurfer2.png";
+import MetaSurfer2 from "@public/slider-images/MetaSurfer2.png";
 
 export default {
   Android1,
