@@ -96,7 +96,7 @@ const Hook = styled((props) => {
       <Header />
       <Background />
       <Box className="contents">
-        <LogoText className="logo" sx={{ mb: 6 }} />
+        <LogoText className="logo-text" sx={{ mb: 6 }} />
         <DiscordButton className="discord-button" />
       </Box>
     </Box>
@@ -120,7 +120,7 @@ const Hook = styled((props) => {
       rgba(6, 3, 9, 1) 100%
     );
 
-    .logo {
+    .logo-text {
       width: min(900px, 90%);
       margin-top: 1rem;
     }
@@ -144,6 +144,10 @@ const Hook = styled((props) => {
       * {
         font-size: 1em !important;
       }
+    }
+
+    .logo-text {
+      display: none;
     }
   }
 `;

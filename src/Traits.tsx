@@ -75,6 +75,13 @@ const TraitPreview = styled(({ name, images, ...props }) => {
   h4 {
     position: absolute;
   }
+
+  ${({theme}) => theme.breakpoints.down("sm")} {
+    h4 {
+
+      font-size: 1.15em;
+    }
+  }
 `;
 
 const Traits = styled(({ ...props }) => {
