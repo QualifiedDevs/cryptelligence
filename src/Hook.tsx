@@ -121,7 +121,7 @@ const Hook = styled((props) => {
     );
 
     .logo-text {
-      width: min(900px, 90%);
+      width: min(700px, 90%);
       margin-top: 1rem;
     }
 
