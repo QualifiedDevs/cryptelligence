@@ -97,7 +97,7 @@ const Hook = styled((props) => {
       <Background />
       <Box className="contents">
         <LogoText className="logo-text" sx={{ mb: 6 }} />
-        <DiscordButton className="discord-button" />
+        {/* <DiscordButton className="discord-button" /> */}
       </Box>
     </Box>
   );

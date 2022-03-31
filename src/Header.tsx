@@ -17,7 +17,7 @@ const Header = styled((props) => {
       <LogoBanner className="logo" />
       <MainMenu className="menu" />
       <Box className="wrapper-right">
-        <Button>Coming Soon</Button>
+        {/* <Button>Coming Soon</Button> */}
         <SocialsMenu className="socials" socials={manifest.socials} />
       </Box>
       <MenuButton className="menu-button" />

@@ -20,12 +20,36 @@
         "twitter": "https://twitter.com/cryptelligence_"
       }
     },
-    "Sara": {
+    "Member3": {
       "name": "Member 3",
       "role": "Community Manager",
       "avatar": "member3",
       "socials": {
         "twitter": "https://twitter.com/cryptelligence_"
+      },
+      "Member4": {
+        "name": "Member 4",
+        "role": "Founder",
+        "avatar": "member1",
+        "socials": {
+          "twitter": "https://twitter.com/cryptelligence_"
+        }
+      },
+      "Member5": {
+        "name": "Member 5",
+        "role": "Artist",
+        "avatar": "member2",
+        "socials": {
+          "twitter": "https://twitter.com/cryptelligence_"
+        }
+      },
+      "Member6": {
+        "name": "Member 6",
+        "role": "Community Manager",
+        "avatar": "member3",
+        "socials": {
+          "twitter": "https://twitter.com/cryptelligence_"
+        }
       }
     }
   }

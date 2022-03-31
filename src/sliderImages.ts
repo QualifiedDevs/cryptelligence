@@ -1,19 +1,17 @@
-import Android1 from "@public/slider-images/Android1.png";
-import Android2 from "@public/slider-images/Android2.png";
-import ComingSoon from "@public/slider-images/ComingSoon.png";
-import Cryptooriginal from "@public/slider-images/Cryptooriginal.png";
-import Degen from "@public/slider-images/Degen.png";
-import Engineer from "@public/slider-images/Engineer.png";
+import Metasurfers from "@public/slider-images/Metasurfers.png";
+import Degens from "@public/slider-images/Degens.png";
+import Devs from "@public/slider-images/Devs.png";
+import Alphas from "@public/slider-images/Alphas.png";
+import Androids from "@public/slider-images/Androids.png";
+import Class_6 from "@public/slider-images/Class 6.png";
 import MetaSurfer1 from "@public/slider-images/MetaSurfer1.png";
 import MetaSurfer2 from "@public/slider-images/MetaSurfer2.png";
 
 export default {
-  Android1,
-  Android2,
-  ComingSoon,
-  Cryptooriginal,
-  Degen,
-  Engineer,
-  MetaSurfer1,
-  MetaSurfer2,
+  Metasurfers,
+  Degens,
+  Devs,
+  Alphas,
+  Androids,
+  "Class 6": Class_6
 };

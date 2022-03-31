@@ -84,6 +84,8 @@ const Avatar = styled(({ src, ...props }) => {
     .heading {
       text-align: center;
       text-transform: uppercase;
+      font-weight: 400;
+      color: ${({theme}) => theme.palette.primary.main};
     }
   
     .team-members {

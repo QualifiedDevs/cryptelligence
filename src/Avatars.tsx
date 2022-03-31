@@ -18,22 +18,23 @@ import sliderImages from "@src/sliderImages";
 
 const Avatar = styled((props) => {
   return (
-      <Box {...props} className={`${props.className} avatar`}>
-        <Box sx={{ mb: 6 }} className="image-wrapper">
-          <Image src={props.src} layout="responsive" objectFit="contain" />
-        </Box>
-        <Typography variant="h5">{props.name}</Typography>
+    <Box {...props} className={`${props.className} avatar`}>
+      <Box sx={{ mb: 6 }} className="image-wrapper">
+        <Image src={props.src} layout="responsive" objectFit="contain" />
       </Box>
+      <Typography variant="h5">{props.name}</Typography>
+    </Box>
   );
 })`
+position: relative;
   .image-wrapper {
     position: relative;
     width: 400px;
-
   }
   h5 {
+    margin-top: -10px;
     color: ${({ theme }) => theme.palette.text.secondary};
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 `;
 
@@ -105,11 +106,13 @@ const Carousel = styled((props) => {
 
   const slides = useMemo(() => {
     return Object.keys(sliderImages).map((name) => {
-      return <SwiperSlide>
-        <Avatar name={name} src={sliderImages[name]} />
-      </SwiperSlide>
-    })
-  })
+      return (
+        <SwiperSlide>
+          <Avatar name={name} src={sliderImages[name]} />
+        </SwiperSlide>
+      );
+    });
+  });
 
   return (
     <Box {...props} className={`${props.className} carousel`}>
@@ -144,7 +147,7 @@ const Carousel = styled((props) => {
       <Box className="pagination-wrapper">
         <Pagination
           swiperRef={swiperRef}
-          numslides={7}
+          numslides={6}
           sx={{ mx: "auto" }}
           activeIndex={activeIndex}
         />
@@ -152,6 +155,9 @@ const Carousel = styled((props) => {
     </Box>
   );
 })`
+  * {
+border-radius: 4px;
+  }
   position: relative;
   overflow: hidden;
   .swiper {
@@ -243,7 +249,7 @@ const Avatars = styled((props) => {
       <Container className="container">
         <Typography variant="h2">Avatars</Typography>
         <Typography variant="h4" sx={{ mb: 6 }}>
-          Unique Combinations | 7 Classes | 300+ Traits
+          6 Classes | 400+ Traits | Unique Characters
         </Typography>
       </Container>
       <Carousel />
@@ -254,6 +260,10 @@ const Avatars = styled((props) => {
   background: #0d0b1c;
   .container {
   }
+
+h2 {
+  font-size: 3rem;
+}
   ${({ theme }) => theme.breakpoints.down("md")} {
     h2 {
       font-size: 2.5rem;

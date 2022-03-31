@@ -96,7 +96,7 @@ const Traits = styled(({ ...props }) => {
           Traits
         </Typography>
         <Typography variant="h4" sx={{ mb: 2 }}>
-          Our goal is to create a range of truly unique avatars.
+          Highly complex trait architecture allows us to create truly differentiated avatars with exciting trait combinations and features
         </Typography>
         <Typography variant="h4" sx={{ mb: 4 }}>
           Navigate for preview.
@@ -119,12 +119,16 @@ const Traits = styled(({ ...props }) => {
     }
   }
 
+  h4 {
+    font-size: 1.1rem;
+  }
+
   ${({ theme }) => theme.breakpoints.down("lg")} {
     h2 {
       font-size: 3rem;
     }
     h4 {
-      font-size: 1.3rem;
+      font-size: 1rem;
     }
   }
 
@@ -141,7 +145,7 @@ const Traits = styled(({ ...props }) => {
       font-size: 2.5rem;
     }
     h4 {
-      font-size: 1.15rem;
+      font-size: 1rem;
     }
   }
 `;
